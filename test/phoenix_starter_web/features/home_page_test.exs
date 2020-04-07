@@ -6,7 +6,6 @@ defmodule PhoenixStarter.Features.HomePageTest do
   test "users can create todos", %{session: session} do
     session
     |> visit("/")
-    |> find(css("section.phx-hero"))
-    |> assert_has(css("h1", text: "Welcome to Phoenix!"))
+    |> assert_has(css("p", text: "Hello World!"))
   end
 end

@@ -26,6 +26,7 @@ defmodule PhoenixStarter.MixProject do
 
   defp deps do
     [
+      {:credo, "~> 1.1.4", [runtime: false, only: :dev]},
       {:phoenix, "~> 1.4.16"},
       {:phoenix_pubsub, "~> 1.1"},
       {:phoenix_ecto, "~> 4.0"},
@@ -42,9 +43,14 @@ defmodule PhoenixStarter.MixProject do
 
   defp aliases do
     [
+      "assets.build": &compile_assets/1,
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["ecto.create --quiet", "ecto.migrate", "test"]
+      test: ["assets.build --silent", "ecto.create --quiet", "ecto.migrate", "test"]
     ]
+  end
+
+  defp compile_assets(_) do
+    Mix.shell().cmd("yarn build")
   end
 end

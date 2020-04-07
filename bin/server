@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+set -e
+. "./bin/functions"
+. "./.envrc"
+
+pp_info "server" "Starting development server..."
+iex -S mix phx.server

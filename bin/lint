@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+set -e
+
+. "./bin/functions"
+
+pp_info "lint" "running the CSS linter..."
+yarn lint-styles
+
+pp_info "lint" "running the javascript linter..."
+yarn lint
+
+pp_info "lint" "running the elixir formatter..."
+mix format --check-formatted --dot-formatter .formatter.exs
+
+pp_info "lint" "running elixir credo..."
+mix credo --strict
+
+pp_success "lint" "no problems found!"

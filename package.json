@@ -2,7 +2,7 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "rm -rf priv/static && NODE_ENV=production webpack",
     "lint": "eslint frontend server.dev.js webpack.config.js",
     "lint-styles": "stylelint frontend/**/*.css"
   },
