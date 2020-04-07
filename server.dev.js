@@ -1,6 +1,4 @@
-#!/usr/bin/env node
-
-/* eslint-disable no-console */
+/* eslint-disable import/no-extraneous-dependencies, no-console */
 
 const webpack = require("webpack");
 const WebpackDevServer = require("webpack-dev-server");

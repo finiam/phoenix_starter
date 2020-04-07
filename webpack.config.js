@@ -1,6 +1,7 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+
 const nodeEnv = process.env.NODE_ENV || "development";
 
 module.exports = {
@@ -89,12 +90,12 @@ module.exports = {
       );
     },
     /* eslint-disable */
-    before: function (app, webpackServer) {
+    before: function(app, webpackServer) {
       // We override the listen() function to set keepAliveTimeout.
       // See: https://github.com/microsoft/WSL/issues/4340
       // Original listen(): https://github.com/webpack/webpack-dev-server/blob/f80e2ae101e25985f0d7e3e9af36c307bfc163d2/lib/Server.js#L744
       const { listen } = webpackServer;
-      webpackServer.listen = function (...args) {
+      webpackServer.listen = function(...args) {
         const server = listen.call(this, ...args);
         server.keepAliveTimeout = 0;
         return server;
