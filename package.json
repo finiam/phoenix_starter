@@ -32,7 +32,6 @@
     "precss": "^4.0.0",
     "react-hot-loader": "^4.12.20",
     "react-imported-component": "^6.2.1",
-    "terser-webpack-plugin": "^2.3.2",
     "webpack": "4.41.5",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.10.3"

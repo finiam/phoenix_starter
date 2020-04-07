@@ -1,15 +1,9 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const nodeEnv = process.env.NODE_ENV || "development";
 
 module.exports = {
-  optimization: {
-    minimizer: [
-      new TerserPlugin({ cache: true, parallel: true, sourceMap: false }),
-    ],
-  },
   entry: ["./frontend/index.js"],
   mode: nodeEnv,
   devtool: nodeEnv === "development" ? "source-map" : "none",
