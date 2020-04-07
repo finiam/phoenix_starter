@@ -41,13 +41,15 @@ defmodule PhoenixStarter.MixProject do
     ]
   end
 
+  defp deps(_), do: []
+
   defp aliases do
     [
       "assets.build": &compile_assets/1,
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: [
-        "assets.build --silent",
+        "assets.build",
         "ecto.create --quiet",
         "ecto.migrate",
         "test"
@@ -56,6 +58,6 @@ defmodule PhoenixStarter.MixProject do
   end
 
   defp compile_assets(_) do
-    Mix.shell().cmd("yarn build")
+    Mix.shell().cmd("yarn build --silent")
   end
 end
