@@ -1,3 +1,5 @@
+/* eslint-disable global-require, import/no-extraneous-dependencies */
+
 /*
   The order of the plugins in this file is very important.
   postcss-import should be at beggining so @import statements
@@ -14,14 +16,14 @@ module.exports = {
     require("precss"),
     require("postcss-preset-env")({
       autoprefixer: {
-        flexbox: "no-2009"
+        flexbox: "no-2009",
       },
-      stage: 3
+      stage: 3,
     }),
     process.env.NODE_ENV === "production"
       ? require("cssnano")({
-          preset: "default"
+          preset: "default",
         })
-      : null
-  ]
+      : null,
+  ],
 };
