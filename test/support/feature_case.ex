@@ -21,7 +21,9 @@ defmodule PhoenixStarter.FeatureCase do
       Ecto.Adapters.SQL.Sandbox.mode(PhoenixStarter.Repo, {:shared, self()})
     end
 
-    metadata = Phoenix.Ecto.SQL.Sandbox.metadata_for(PhoenixStarter.Repo, self())
+    metadata =
+      Phoenix.Ecto.SQL.Sandbox.metadata_for(PhoenixStarter.Repo, self())
+
     {:ok, session} = Wallaby.start_session(metadata: metadata)
     {:ok, session: session}
   end

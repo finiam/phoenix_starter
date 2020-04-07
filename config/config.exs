@@ -13,7 +13,8 @@ config :phoenix_starter,
 # Configures the endpoint
 config :phoenix_starter, PhoenixStarterWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "Kdx7FKHM50+zw5MDplDK5tft3vfaVopA/lnX904SNtNgqcn+Ti3v9G7hk+GUH4E+",
+  secret_key_base:
+    "Kdx7FKHM50+zw5MDplDK5tft3vfaVopA/lnX904SNtNgqcn+Ti3v9G7hk+GUH4E+",
   render_errors: [view: PhoenixStarterWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: PhoenixStarter.PubSub, adapter: Phoenix.PubSub.PG2],
   live_view: [signing_salt: "E6/tASpm"]

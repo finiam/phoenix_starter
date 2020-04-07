@@ -1,0 +1,3 @@
+cd $phoenix_dir
+yarn build
+mix phx.digest

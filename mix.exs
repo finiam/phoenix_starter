@@ -46,7 +46,12 @@ defmodule PhoenixStarter.MixProject do
       "assets.build": &compile_assets/1,
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
-      test: ["assets.build --silent", "ecto.create --quiet", "ecto.migrate", "test"]
+      test: [
+        "assets.build --silent",
+        "ecto.create --quiet",
+        "ecto.migrate",
+        "test"
+      ]
     ]
   end
 
