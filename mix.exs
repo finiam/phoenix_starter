@@ -26,7 +26,7 @@ defmodule PhoenixStarter.MixProject do
 
   defp deps do
     [
-      {:credo, "~> 1.1.4", [runtime: false, only: :dev]},
+      {:credo, "~> 1.3.2", [runtime: false, only: :dev]},
       {:phoenix, "~> 1.4.16"},
       {:phoenix_pubsub, "~> 1.1"},
       {:phoenix_ecto, "~> 4.0"},
