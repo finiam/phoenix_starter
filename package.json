@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@hot-loader/react-dom": "^16.13.0",
-    "core-js": "^3.6.4",
+    "core-js": "^3.6.5",
     "normalize.css": "^8.0.1",
     "phoenix": "^1.4.16",
     "prop-types": "^15.7.2",
