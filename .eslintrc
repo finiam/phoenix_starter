@@ -1,7 +1,8 @@
 {
   "plugins": [
     "jsx-a11y",
-    "react-hooks"
+    "react-hooks",
+    "prettier"
   ],
   "parser": "babel-eslint",
   "extends": [
@@ -14,6 +15,7 @@
     "es6": true
   },
   "rules": {
+    "prettier/prettier": "error",
     "eol-last": [
       "error",
       "always"
