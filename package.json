@@ -4,7 +4,7 @@
   "scripts": {
     "build": "rm -rf priv/static && NODE_ENV=production webpack",
     "lint": "eslint frontend server.dev.js webpack.config.js postcss.config.js",
-    "lint-styles": "stylelint frontend/**/*.css"
+    "lint-styles": "stylelint 'frontend/**/*.css'"
   },
   "dependencies": {
     "@hot-loader/react-dom": "^16.13.0",
