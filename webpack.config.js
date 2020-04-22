@@ -1,4 +1,5 @@
 const path = require("path");
+const fs = require("fs");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
@@ -11,14 +12,14 @@ module.exports = {
   output:
     nodeEnv === "production"
       ? {
-          path: path.resolve(__dirname, "./priv/static"),
-          filename: "./js/index.js",
-          publicPath: "/",
+          path: path.resolve(__dirname, "./priv/static/assets"),
+          filename: "./index.js",
+          publicPath: "/assets/",
         }
       : {
-          path: path.resolve(__dirname, "./priv/static"),
-          filename: "./js/index.js",
-          publicPath: "http://localhost:8000/",
+          path: path.resolve(__dirname, "./priv/static/assets"),
+          filename: "./index.js",
+          publicPath: "http://localhost:8000/assets/",
         },
   resolve: {
     alias: {
@@ -70,13 +71,23 @@ module.exports = {
           "postcss-loader",
         ],
       },
+      {
+        test: /\.(jpg|png|webp|gif|mp4)$/,
+        use: {
+          loader: "url-loader",
+          options: {
+            limit: 5000,
+          },
+        },
+      },
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: "./css/index.css" }),
-    new CopyWebpackPlugin([{ from: "frontend/static/", to: "./" }]),
+    new MiniCssExtractPlugin({ filename: "./index.css" }),
+    new CopyWebpackPlugin([{ from: "frontend/static/", to: "../" }]),
   ],
   devServer: {
+    publicPath: "/assets/",
     historyApiFallback: true,
     host: "0.0.0.0",
     port: 8000,
@@ -84,18 +95,18 @@ module.exports = {
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
-    writeToDisk: (filePath) => {
-      return /(favicon\.ico|texture.jpg|robots.txt|particle.png)$/.test(
-        filePath
-      );
+    writeToDisk: (incomingFilePath) => {
+      const filesToWrite = fs.readdirSync("frontend/static");
+
+      return filesToWrite.some((file) => incomingFilePath.endsWith(file));
     },
     /* eslint-disable */
-    before: function(app, webpackServer) {
+    before: function (app, webpackServer) {
       // We override the listen() function to set keepAliveTimeout.
       // See: https://github.com/microsoft/WSL/issues/4340
       // Original listen(): https://github.com/webpack/webpack-dev-server/blob/f80e2ae101e25985f0d7e3e9af36c307bfc163d2/lib/Server.js#L744
       const { listen } = webpackServer;
-      webpackServer.listen = function(...args) {
+      webpackServer.listen = function (...args) {
         const server = listen.call(this, ...args);
         server.keepAliveTimeout = 0;
         return server;

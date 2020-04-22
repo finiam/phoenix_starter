@@ -1,5 +1,6 @@
 import React from "react";
 import asyncImport from "react-imported-component";
+import potato from "root/assets/potato.jpg";
 
 import styles from "./index.module.css";
 
@@ -11,6 +12,7 @@ export default function App() {
     <div className={styles.root}>
       <p>Hello World!</p>
       <Text>This is an async component</Text>
+      <img className={styles.image} src={potato} alt="potato" />
     </div>
   );
 }

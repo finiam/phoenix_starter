@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title><%= assigns[:page_title] || "PhoenixStarter" %></title>
     <%= if Mix.env == :dev do %>
-      <link rel="stylesheet" href="http://localhost:8000/css/index.css" %>
-      <script type="text/javascript" src="http://localhost:8000/js/index.js" %>"></script>
+      <link rel="stylesheet" href="http://localhost:8000/assets/index.css" %>
+      <script type="text/javascript" src="http://localhost:8000/assets/index.js" %>"></script>
     <% else %>
-      <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/index.css") %>"/>
-      <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/index.js") %>"></script>
+      <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/assets/index.css") %>"/>
+      <script type="text/javascript" src="<%= Routes.static_path(@conn, "/assets/index.js") %>"></script>
     <% end %>
     <%= csrf_meta_tag() %>
   </head>
