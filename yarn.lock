@@ -5535,10 +5535,10 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-phoenix@^1.4.16:
-  version "1.4.16"
-  resolved "https://registry.yarnpkg.com/phoenix/-/phoenix-1.4.16.tgz#83b887ddb69b676024fd1c6ea6849a46ae0d837f"
-  integrity sha512-XmKVTlFQuRwTYBO1WU1OaN2tzywRAtY6haUpxHPGxNZuyPEgmo+Caw7+BMlIPhipM197+d962i6sGZLylBtCbA==
+phoenix@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/phoenix/-/phoenix-1.5.1.tgz#a8bee36a02a9448c052ad3ba6f7e3ba061d46ce2"
+  integrity sha512-0cTQ5XfAqt8l3+KnnX0AW3hww0N37bOgTTeyt1cH80VJNeEMab8+0bK421XhVoaQ8R0Vsc0GS3W6CyI4eND0Ew==
 
 picomatch@^2.0.5, picomatch@^2.2.1:
   version "2.2.2"
