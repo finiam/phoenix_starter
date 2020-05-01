@@ -28,8 +28,8 @@ defmodule PhoenixStarter.MixProject do
 
   defp deps do
     [
-      {:phoenix, "~> 1.4.16"},
-      {:phoenix_pubsub, "~> 1.1"},
+      {:phoenix, "~> 1.5.1"},
+      {:phoenix_pubsub, "~> 2.0.0"},
       {:phoenix_ecto, "~> 4.0"},
       {:ecto_sql, "~> 3.1"},
       {:postgrex, ">= 0.0.0"},
@@ -41,7 +41,7 @@ defmodule PhoenixStarter.MixProject do
     ]
   end
 
-  defp deps(env) when env in [:dev, :text] do
+  defp deps(env) when env in [:dev, :test] do
     [
       {:credo, "~> 1.4.0", runtime: false},
       {:phoenix_live_reload, "~> 1.2"},
