@@ -61,6 +61,8 @@ jobs:
       run: |
         mix format --check-formatted
         mix credo --strict
+        yarn lint
+        yarn lint-styles
 
     - name: Run Tests
       run: mix test
