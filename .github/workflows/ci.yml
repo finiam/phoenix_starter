@@ -28,13 +28,21 @@ jobs:
         elixir-version: 1.10.2
         otp-version: 22.3
 
-    - name: Cache deps
+    - name: Cache elixir deps
       uses: actions/cache@v1
       with:
         path: deps
         key: ${{ runner.os }}-mix-${{ hashFiles(format('{0}{1}', github.workspace, '/mix.lock')) }}
         restore-keys: |
           ${{ runner.os }}-mix-
+
+    - name: Cache yarn deps
+      uses: actions/cache@v1
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-yarn-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
 
     - name: Cache build
       uses: actions/cache@v1
