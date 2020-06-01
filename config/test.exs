@@ -12,7 +12,7 @@ config :phoenix_starter, PhoenixStarterWeb.Endpoint,
   server: true
 
 config :wallaby,
-  driver: Wallaby.Experimental.Chrome,
+  driver: Wallaby.Chrome,
   chrome: [headless: true],
   screenshot_on_failure: false
 
