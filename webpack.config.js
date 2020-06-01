@@ -84,7 +84,9 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({ filename: "./index.css" }),
-    new CopyWebpackPlugin({patterns: [{ from: "frontend/static/", to: "../" }]}),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "frontend/static/", to: "../" }],
+    }),
   ],
   devServer: {
     publicPath: "/assets/",

@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:11
+        ports:
+        - 5432:5432
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_USERNAME: postgres
+          POSTGRES_HOSTNAME: 0.0.0.0
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup elixir
+      uses: actions/setup-elixir@v1
+      with:
+        elixir-version: 1.10.2
+        otp-version: 22.3
+
+    - name: Cache elixir deps
+      uses: actions/cache@v1
+      with:
+        path: deps
+        key: ${{ runner.os }}-mix-${{ hashFiles(format('{0}{1}', github.workspace, '/mix.lock')) }}
+        restore-keys: |
+          ${{ runner.os }}-mix-
+
+    - name: Cache yarn deps
+      uses: actions/cache@v1
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-yarn-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+
+    - name: Cache build
+      uses: actions/cache@v1
+      with:
+        path: _build
+        key: ${{ runner.OS }}-build-
+        restore-keys: |
+          ${{ runner.OS }}-build-
+
+    - name: Install Dependencies
+      run: |
+        mix deps.get
+        yarn
+
+    - name: Linting
+      run: |
+        mix format --check-formatted
+        mix credo --strict
+        yarn lint
+        yarn lint-styles
+
+    - name: Run Tests
+      run: mix test
