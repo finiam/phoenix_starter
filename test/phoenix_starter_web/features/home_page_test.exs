@@ -3,7 +3,7 @@ defmodule PhoenixStarter.Features.HomePageTest do
 
   import Wallaby.Query
 
-  test "users can create todos", %{session: session} do
+  test "home page displays hello world", %{session: session} do
     session
     |> visit("/")
     |> assert_has(css("p", text: "Hello World!"))
