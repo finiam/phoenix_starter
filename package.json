@@ -15,7 +15,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hot-loader": "^4.12.21",
-    "react-imported-component": "^6.3.5",
+    "react-imported-component": "^6.3.11",
     "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {

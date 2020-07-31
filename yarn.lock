@@ -2680,6 +2680,11 @@ detect-file@^1.0.0:
   resolved "https://registry.yarnpkg.com/detect-file/-/detect-file-1.0.0.tgz#f0d66d03672a825cb1b73bdb3fe62310c8e552b7"
   integrity sha1-8NZtA2cqglyxtzvbP+YjEMjlUrc=
 
+detect-node-es@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/detect-node-es/-/detect-node-es-1.0.0.tgz#c0318b9e539a5256ca780dd9575c9345af05b8ed"
+  integrity sha512-S4AHriUkTX9FoFvL4G8hXDcx6t3gp2HpfCza3Q0v6S78gul2hKWifLQbeW+ZF89+hSm2ZIc/uF3J97ZgytgTRg==
+
 detect-node@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/detect-node/-/detect-node-2.0.4.tgz#014ee8f8f669c5c58023da64b8179c083a28c46c"
@@ -6700,14 +6705,14 @@ react-hot-loader@^4.12.21:
     shallowequal "^1.1.0"
     source-map "^0.7.3"
 
-react-imported-component@^6.3.5:
-  version "6.3.5"
-  resolved "https://registry.yarnpkg.com/react-imported-component/-/react-imported-component-6.3.5.tgz#ef6ecc2cbfa276948382b20c897d3194e4c5c62a"
-  integrity sha512-HttU4syg6TNY5M1B1y8cnSgPtbQbNAJaWUes3/9NYr22IPMWRa+D+GGQDUI8rS98e92LNkMszXWbpxWX84g80g==
+react-imported-component@^6.3.11:
+  version "6.3.11"
+  resolved "https://registry.yarnpkg.com/react-imported-component/-/react-imported-component-6.3.11.tgz#35c8541fced6f4384d1823f368ed376e81b2196c"
+  integrity sha512-Q16XVZuinp6XsRvvZqOf1oCw9lwnYkhFGE7CuhTz1iW3uNCpCeZaLngfXOrwIx/+zKalnagkwHYh/p5/nnqF3w==
   dependencies:
     babel-plugin-macros "^2.6.1"
     crc-32 "^1.2.0"
-    detect-node "^2.0.4"
+    detect-node-es "^1.0.0"
     scan-directory "^2.0.0"
     tslib "^1.10.0"
 
