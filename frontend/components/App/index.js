@@ -7,7 +7,7 @@ import styles from "./index.module.css";
 // Code splitting, as an example
 const Text = asyncImport(() => import("root/components/Text"));
 
-export default function App() {
+function App() {
   return (
     <div className={styles.root}>
       <p>Hello World!</p>
@@ -16,3 +16,5 @@ export default function App() {
     </div>
   );
 }
+
+export default App;

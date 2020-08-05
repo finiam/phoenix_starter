@@ -1,6 +1,5 @@
 // Polyfills should be imported before EVERYTHING
-import "root/shared/polyfills";
-import { hot } from "react-hot-loader/root";
+import "./shared/polyfills";
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -8,8 +7,14 @@ import App from "./components/App";
 
 import "./styles/base.css";
 
-const HottestApp = hot(App);
+function Root() {
+  return (
+    <div>
+      <App />
+    </div>
+  );
+}
 
 window.addEventListener("DOMContentLoaded", () => {
-  ReactDOM.render(<HottestApp />, document.getElementById("root"));
+  ReactDOM.render(<Root />, document.getElementById("root"));
 });
