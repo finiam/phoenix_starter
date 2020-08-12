@@ -7,14 +7,6 @@ import App from "./components/App";
 
 import "./styles/base.css";
 
-function Root() {
-  return (
-    <div>
-      <App />
-    </div>
-  );
-}
-
 window.addEventListener("DOMContentLoaded", () => {
-  ReactDOM.render(<Root />, document.getElementById("root"));
+  ReactDOM.render(<App />, document.getElementById("root"));
 });
