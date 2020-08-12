@@ -2,29 +2,28 @@ const path = require("path");
 const fs = require("fs");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
-const nodeEnv = process.env.NODE_ENV || "development";
+const isDev = process.env.NODE_ENV !== "production";
 
 module.exports = {
   entry: ["./frontend/index.js"],
-  mode: nodeEnv,
-  devtool: nodeEnv === "development" ? "source-map" : "none",
-  output:
-    nodeEnv === "production"
-      ? {
-          path: path.resolve(__dirname, "./priv/static/assets"),
-          filename: "./index.js",
-          publicPath: "/assets/",
-        }
-      : {
-          path: path.resolve(__dirname, "./priv/static/assets"),
-          filename: "./index.js",
-          publicPath: "http://localhost:8000/assets/",
-        },
+  mode: isDev ? "development" : "production",
+  devtool: isDev ? "source-map" : "none",
+  output: isDev
+    ? {
+        path: path.resolve(__dirname, "./priv/static/assets"),
+        filename: "./index.js",
+        publicPath: "http://localhost:8000/assets/",
+      }
+    : {
+        path: path.resolve(__dirname, "./priv/static/assets"),
+        filename: "./index.js",
+        publicPath: "/assets/",
+      },
   resolve: {
     alias: {
       root: path.resolve(__dirname, "./frontend/"),
-      "react-dom": "@hot-loader/react-dom",
     },
   },
   module: {
@@ -39,12 +38,7 @@ module.exports = {
       {
         test: /module\.(css|scss)$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: nodeEnv === "development",
-            },
-          },
+          isDev ? "style-loader" : MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
@@ -64,7 +58,7 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              hmr: nodeEnv === "development",
+              hmr: isDev,
             },
           },
           "css-loader",
@@ -83,6 +77,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new ReactRefreshWebpackPlugin(),
     new MiniCssExtractPlugin({ filename: "./index.css" }),
     new CopyWebpackPlugin({
       patterns: [{ from: "frontend/static/", to: "../" }],

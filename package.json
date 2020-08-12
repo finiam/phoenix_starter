@@ -7,23 +7,21 @@
     "lint-styles": "stylelint 'frontend/**/*.css'"
   },
   "dependencies": {
-    "@hot-loader/react-dom": "^16.13.0",
     "core-js": "^3.6.5",
     "normalize.css": "^8.0.1",
     "phoenix": "^1.5.4",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-hot-loader": "^4.12.21",
     "react-imported-component": "^6.3.11",
     "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-transform-react-jsx-source": "^7.10.5",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.0",
     "copy-webpack-plugin": "^6.0.3",
@@ -44,6 +42,8 @@
     "postcss-preset-env": "^6.7.0",
     "precss": "^4.0.0",
     "prettier": "^2.0.5",
+    "react-refresh": "^0.8.3",
+    "style-loader": "^1.2.1",
     "stylelint": "^13.6.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-order": "^4.1.0",
