@@ -21,7 +21,7 @@
     "@babel/plugin-transform-react-jsx-source": "^7.10.5",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
-    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.1",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.4.2",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.0",
     "copy-webpack-plugin": "^6.0.3",
