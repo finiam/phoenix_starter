@@ -15,7 +15,7 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 ## Diferences to the classic template
 
-`phx new` does a great job of a bootstrapping an Phoenix app for you, but we usually run things a little diference. This template has a few differences, mostly on the frontend side of things. We run all of our frontend code at the root of the project, mainly due to IDE and code editors limitations, that expect linters and configs to be at the root of the project. We also setup React which has been our SPA of choice nowadays.
+`phx new` does a great job of a bootstrapping a Phoenix app for you, but we usually run things a little different. This template has a few differences, mostly on the frontend side of things. We run all of our frontend code at the root of the project, mainly due to IDE and code editors limitations, that expect linters and configs to be at the root of the project. We also setup React which has been our SPA of choice nowadays.
 
 Also, one of the most important changes is the usage of `wallaby` to make fullstack integration testing. So we can test the whole application.
 
