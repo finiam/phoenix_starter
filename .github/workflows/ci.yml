@@ -25,8 +25,8 @@ jobs:
     - name: Setup elixir
       uses: actions/setup-elixir@v1
       with:
-        elixir-version: 1.10.2
-        otp-version: 22.3
+        elixir-version: 1.11.0
+        otp-version: 23.1.1
 
     - name: Cache elixir deps
       uses: actions/cache@v1

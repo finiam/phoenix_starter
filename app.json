@@ -16,8 +16,5 @@
     "SECRET_KEY_BASE": {
       "generator": "secret"
     }
-  },
-  "formation": {},
-  "name": "finiam-phoenix-starter",
-  "stack": "heroku-18"
+  }
 }
