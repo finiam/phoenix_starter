@@ -9,7 +9,7 @@ const isDev = process.env.NODE_ENV !== "production";
 module.exports = {
   entry: ["./frontend/index.js"],
   mode: isDev ? "development" : "production",
-  devtool: isDev ? "source-map" : "none",
+  devtool: isDev ? "eval-source-map" : undefined,
   output: isDev
     ? {
         path: path.resolve(__dirname, "./priv/static/assets"),
