@@ -66,6 +66,6 @@ defmodule PhoenixStarter.MixProject do
   end
 
   defp compile_assets(_) do
-    Mix.shell().cmd("yarn build --silent")
+    Mix.shell().cmd("yarn build", quiet: true)
   end
 end
