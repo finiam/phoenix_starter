@@ -1,6 +1,5 @@
 const path = require("path");
 const fs = require("fs");
-const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
@@ -80,7 +79,6 @@ module.exports = {
     ],
   },
   plugins: [
-    isDev ? new webpack.HotModuleReplacementPlugin() : null,
     isDev
       ? new ReactRefreshWebpackPlugin({
           overlay: { sockPort: 8000 },
