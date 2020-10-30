@@ -43,7 +43,7 @@ defmodule PhoenixStarter.MixProject do
 
   defp deps(env) when env in [:dev, :test] do
     [
-      {:credo, "~> 1.4.0", runtime: false},
+      {:credo, "~> 1.5.0", runtime: false},
       {:phoenix_live_reload, "~> 1.2"},
       {:wallaby, "~> 0.26.1", runtime: false}
     ]
