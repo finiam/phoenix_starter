@@ -38,7 +38,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "file-loader": "^6.2.0",
     "mini-css-extract-plugin": "^1.2.1",
-    "postcss": "^8.1.4",
+    "postcss": "^8.1.6",
     "postcss-import": "^13.0.0",
     "postcss-loader": "^4.0.4",
     "postcss-preset-env": "^6.7.0",
