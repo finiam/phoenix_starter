@@ -7,13 +7,14 @@
     "lint-styles": "stylelint 'frontend/**/*.css'"
   },
   "dependencies": {
+    "@loadable/component": "^5.14.1",
     "core-js": "^3.7.0",
     "normalize.css": "^8.0.1",
     "phoenix": "^1.5.6",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-imported-component": "^6.3.13",
+    "redaxios": "^0.3.0",
     "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {

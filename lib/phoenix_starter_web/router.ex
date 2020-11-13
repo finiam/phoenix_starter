@@ -10,17 +10,20 @@ defmodule PhoenixStarterWeb.Router do
   end
 
   pipeline :api do
+    plug CORSPlug, origin: "*"
+
     plug :accepts, ["json"]
+  end
+
+  scope "/api", PhoenixStarterWeb do
+    pipe_through :api
+
+    get "/example", ExampleController, :index
   end
 
   scope "/", PhoenixStarterWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/*path", PageController, :index
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", PhoenixStarterWeb do
-  #   pipe_through :api
-  # end
 end

@@ -1,24 +1,20 @@
-import React, { useEffect, useRef } from "react";
-import asyncImport from "react-imported-component";
+import React from "react";
+import loadable from "@loadable/component";
+
+import ServerResource from "root/components/ServerResource";
 import potato from "root/assets/potato.jpg";
-import asyncImporter from "root/shared/asyncImporter";
 
 import styles from "./index.module.css";
 
 // Code splitting, as an example
-const Text = asyncImporter(import("root/components/Text"));
+const Text = loadable(() => import("root/components/Text"));
 
 export default function App() {
-  const ref = useRef();
-
-  useEffect(() => {
-    window.ref = ref;
-  });
-
   return (
     <div className={styles.root}>
       <p>Hello World!</p>
-      <Text ref={ref}>This is an async component</Text>
+      <Text>This is an async component</Text>
+      <ServerResource />
       <img className={styles.image} src={potato} alt="potato" />
     </div>
   );
