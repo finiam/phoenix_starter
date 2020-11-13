@@ -7,5 +7,6 @@ defmodule PhoenixStarter.Features.HomePageTest do
     session
     |> visit("/")
     |> assert_has(css("p", text: "Hello World!"))
+    |> assert_has(css("p", text: "API Result: example"))
   end
 end

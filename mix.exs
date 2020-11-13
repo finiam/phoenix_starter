@@ -28,6 +28,7 @@ defmodule PhoenixStarter.MixProject do
 
   defp deps do
     [
+      {:cors_plug, "~> 2.0"},
       {:phoenix, "~> 1.5.6"},
       {:phoenix_pubsub, "~> 2.0.0"},
       {:phoenix_ecto, "~> 4.0"},

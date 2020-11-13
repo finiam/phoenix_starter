@@ -9,13 +9,9 @@
     ],
     "@babel/preset-react"
   ],
-  "plugins": ["react-imported-component/babel"],
   "env": {
     "development": {
-      "plugins": [
-        "@babel/plugin-transform-react-jsx-source",
-        "react-refresh/babel"
-      ]
+      "plugins": ["react-refresh/babel"]
     }
   }
 }
