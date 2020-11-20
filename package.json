@@ -47,7 +47,7 @@
     "prettier": "^2.2.0",
     "react-refresh": "^0.9.0",
     "style-loader": "^2.0.0",
-    "stylelint": "^13.7.2",
+    "stylelint": "^13.8.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-order": "^4.1.0",
     "stylelint-prettier": "^1.1.2",
