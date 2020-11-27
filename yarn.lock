@@ -5704,10 +5704,10 @@ path-type@^4.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
-phoenix@^1.5.6:
-  version "1.5.6"
-  resolved "https://registry.yarnpkg.com/phoenix/-/phoenix-1.5.6.tgz#759e2dca05ec228632ec28fc9df1b8e9856695ec"
-  integrity sha512-PI/GbwY6+zOSFmtX9SntQ8EIpJ0bDzn5Zyioij2SilG87lgUHSIaiAy9AIatqL9m7ykRrV6hDLBtgxnRMtI5jQ==
+phoenix@^1.5.7:
+  version "1.5.7"
+  resolved "https://registry.yarnpkg.com/phoenix/-/phoenix-1.5.7.tgz#86775bc51271e49930fd7d879ec3ec2addd6bf08"
+  integrity sha512-RgVdTRsK5NpnUPkjPyLg9P8qQQvuDaUsazH06t+ARu9EnPryQ7asE76VDjVZ43fqjY/p8er6y6OQb17YViG47g==
 
 picomatch@^2.0.5, picomatch@^2.2.1:
   version "2.2.2"
