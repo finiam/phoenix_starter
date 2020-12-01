@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 CURRENT_NAME="PhoenixStarter"
 CURRENT_OTP="phoenix_starter"
 
@@ -9,10 +11,8 @@ read -r NEW_NAME
 echo "Please enter new OTP name (current: "$CURRENT_OTP")"
 read -r NEW_OTP
 
-# Ignore errors. For some reason the sed command gives an "file not found" error at the end of executing, however
-# all files are replaces correctly. If someone knows how to fix, feel free.
-(git ls-tree -r master --name-only | xargs sed -i '' -e "s/$CURRENT_NAME/$NEW_NAME/g") 2>/dev/null && true
-(git ls-tree -r master --name-only | xargs sed -i '' -e "s/$CURRENT_OTP/$NEW_OTP/g") 2>/dev/null && true
+git ls-tree -r master --name-only | xargs -r sed -i -e "s/$CURRENT_NAME/$NEW_NAME/g"
+git ls-tree -r master --name-only | xargs -r sed -i -e "s/$CURRENT_OTP/$NEW_OTP/g"
 
 [ -d lib/$CURRENT_OTP ] && mv lib/$CURRENT_OTP lib/$NEW_OTP
 [ -f lib/$CURRENT_OTP.ex ] && mv lib/$CURRENT_OTP.ex lib/$NEW_OTP.ex
