@@ -1,7 +1,7 @@
 {
   "repository": {},
   "license": "MIT",
-  "browserslist": ">0.75%, ie 11, not dead",
+  "browserslist": ">2%, not dead",
   "scripts": {
     "dev": "NODE_ENV=development snowpack dev",
     "build": "NODE_ENV=production snowpack build",
