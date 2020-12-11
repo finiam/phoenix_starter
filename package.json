@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@loadable/component": "^5.14.1",
-    "core-js": "^3.8.0",
+    "core-js": "^3.8.1",
     "normalize.css": "^8.0.1",
     "phoenix": "^1.5.7",
     "prop-types": "^15.7.2",
