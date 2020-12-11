@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import redaxios from "redaxios";
 
 export default function ServerResource() {
-  const [data, setData] = useState();
+  const [data, setData] = useState<undefined | any>();
 
   async function fetchExampleData() {
     const response = await redaxios.get(`/api/example`);

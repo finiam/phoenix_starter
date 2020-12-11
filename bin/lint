@@ -3,17 +3,20 @@
 set -e
 
 . "./bin/functions"
-
-pp_info "lint" "running the CSS linter..."
-yarn lint-styles
-
-pp_info "lint" "running the javascript linter..."
-yarn lint
+test -f .envrc && . "./.envrc"
 
 pp_info "lint" "running the elixir formatter..."
 mix format --check-formatted --dot-formatter .formatter.exs
 
 pp_info "lint" "running elixir credo..."
 mix credo --strict
+
+cd frontend
+
+pp_info "lint" "running the CSS linter..."
+yarn lint-styles
+
+pp_info "lint" "running the javascript linter..."
+yarn lint
 
 pp_success "lint" "no problems found!"

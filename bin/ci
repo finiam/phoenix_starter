@@ -3,6 +3,7 @@
 set -e
 
 . "./bin/functions"
+test -f .envrc && . "./.envrc"
 
 pp_info "ci" "running local ci script"
 echo ""

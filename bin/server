@@ -2,7 +2,12 @@
 
 set -e
 . "./bin/functions"
-. "./.envrc"
+test -f .envrc && . "./.envrc"
 
 pp_info "server" "Starting development server..."
+cd frontend
+yarn dev&
+cd ..
 iex -S mix phx.server
+
+trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT

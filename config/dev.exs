@@ -19,12 +19,7 @@ config :phoenix_starter, PhoenixStarterWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
-  check_origin: false,
-  watchers: [
-    node: [
-      "server.dev.js"
-    ]
-  ]
+  check_origin: false
 
 config :phoenix_starter, PhoenixStarterWeb.Endpoint,
   live_reload: [

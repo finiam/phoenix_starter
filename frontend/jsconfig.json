@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "root/*": [
-        "frontend/*"
+        ".src/*"
       ]
     }
   },

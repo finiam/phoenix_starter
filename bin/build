@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+set -e
+. "./bin/functions"
+test -f .envrc && . "./.envrc"
+
+pp_info "build" "Building the frontend assets..."
+
+rm -rf frontend/build priv/static
+cd frontend
+yarn build
+cd ..
+mkdir -p priv/static
+cp -R frontend/build/* priv/static
+rm -rf frontend/build
