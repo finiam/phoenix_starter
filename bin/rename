@@ -1,0 +1,22 @@
+#!/bin/bash
+
+set -e
+
+CURRENT_NAME="PhoenixStarter"
+CURRENT_OTP="phoenix_starter"
+
+echo "Please enter new name (current: "$CURRENT_NAME")"
+read -r NEW_NAME
+
+echo "Please enter new OTP name (current: "$CURRENT_OTP")"
+read -r NEW_OTP
+
+git ls-tree -r master --name-only | grep -I $CURRENT_NAME | xargs -r sed -i -e "s/$CURRENT_NAME/$NEW_NAME/g"
+git ls-tree -r master --name-only | grep -I $CURRENT_OTP | xargs -r sed -i -e "s/$CURRENT_OTP/$NEW_OTP/g"
+
+[ -d lib/$CURRENT_OTP ] && mv lib/$CURRENT_OTP lib/$NEW_OTP
+[ -f lib/$CURRENT_OTP.ex ] && mv lib/$CURRENT_OTP.ex lib/$NEW_OTP.ex
+[ -d lib/${CURRENT_OTP}_web ] && mv lib/${CURRENT_OTP}_web lib/${NEW_OTP}_web
+[ -f lib/${CURRENT_OTP}_web.ex ] && mv lib/${CURRENT_OTP}_web.ex lib/${NEW_OTP}_web.ex
+[ -d test/$CURRENT_OTP ] && mv test/$CURRENT_OTP test/$NEW_OTP
+[ -d test/${CURRENT_OTP}_web ] && mv test/${CURRENT_OTP}_web test/${NEW_OTP}_web
