@@ -38,3 +38,8 @@ npm-debug.log
 
 # env variables for dev
 .envrc
+
+# Erlang crash dumps
+erl_crash.dump
+
+frontend/build/

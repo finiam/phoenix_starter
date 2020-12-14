@@ -58,14 +58,14 @@ jobs:
     - name: Install Dependencies
       run: |
         mix deps.get
-        yarn
+        cd frontend && yarn && cd ..
 
     - name: Linting
       run: |
         mix format --check-formatted
         mix credo --strict
-        yarn lint
-        yarn lint-styles
+        cd frontend && yarn lint && cd ..
+        cd frontend && yarn lint-styles && cd ..
 
     - name: Run Tests
       run: mix test

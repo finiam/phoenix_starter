@@ -3,7 +3,7 @@
 set -e
 
 . "./bin/functions"
-. "./.envrc"
+test -f .envrc && . "./.envrc"
 
 pp_info "test" "running elixir tests"
 mix test

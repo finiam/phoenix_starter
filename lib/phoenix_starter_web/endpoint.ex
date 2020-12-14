@@ -22,7 +22,7 @@ defmodule PhoenixStarterWeb.Endpoint do
     at: "/",
     from: :phoenix_starter,
     gzip: true,
-    only: ~w(assets favicon.ico robots.txt)
+    only: ~w(css js assets favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
