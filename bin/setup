@@ -55,6 +55,7 @@ mix archive.install hex phx_new 1.4.8 --force
 
 echo ""
 pp_info "setup" "Installing node dependencies..."
+cd frontend
 yarn install
 
 echo ""
