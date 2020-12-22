@@ -961,10 +961,10 @@
     dotenv "^8.2.0"
     dotenv-expand "^5.1.0"
 
-"@snowpack/plugin-postcss@^1.0.10":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@snowpack/plugin-postcss/-/plugin-postcss-1.0.10.tgz#69faf481e0a19e73264791cbeae1946b928318d1"
-  integrity sha512-bMnia5khNaKQDNFaE8EcZ2uVpQP+74c5XIVRtbfPedjtA0dI+BgGUBNy/uHLMbdEyq9SsxryB8hDl9LL0gy2Ew==
+"@snowpack/plugin-postcss@^1.0.11":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@snowpack/plugin-postcss/-/plugin-postcss-1.0.11.tgz#7ad7db389792dbc29e03eda5031ea0220ae4a898"
+  integrity sha512-aklC9xGthawFc79ysS4qckmOxU+K3/PR7mDmYZPx9Ta0oZ92GhnFo2dFP8nei5PzyFx9pkoziAAaJ2X1wAmpDQ==
   dependencies:
     execa "^4.1.0"
 
