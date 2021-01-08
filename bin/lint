@@ -11,8 +11,6 @@ mix format --check-formatted --dot-formatter .formatter.exs
 pp_info "lint" "running elixir credo..."
 mix credo --strict
 
-cd frontend
-
 pp_info "lint" "running the CSS linter..."
 yarn lint-styles
 
