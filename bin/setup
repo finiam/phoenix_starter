@@ -39,9 +39,8 @@ else
 fi
 
 if not_installed "yarn"; then
-  pp_error "error" "yarn was not detected on this system, you need it to install frontend dependencies"
-
-  exit -1
+  pp_info "installling yarn"
+  npm install -g yarn
 fi
 
 . "./.envrc"
