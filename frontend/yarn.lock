@@ -3091,10 +3091,10 @@ eslint-config-airbnb@^18.2.0:
     object.assign "^4.1.2"
     object.entries "^1.1.2"
 
-eslint-config-finiam@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/eslint-config-finiam/-/eslint-config-finiam-1.0.2.tgz#a258bdd290ae9ae05dd079e756639c6759878576"
-  integrity sha512-LLIhqQraTkCpdwE5QNZZFnkFU8ObtrOQpJXvCOp/i7wFrGEOi3AoeEUqfkztueV10BLYYC16CCuLgkGUAdqEEQ==
+eslint-config-finiam@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/eslint-config-finiam/-/eslint-config-finiam-1.0.3.tgz#8f853e6ffffef1981cb34e1eb851fa975cc90215"
+  integrity sha512-Mde14Vo1VTrEfHn+lHnrDFMFZJ9olHVJyTyYzQrTIJM6e4KSm21eKhmwMnucKEoKjLIgJ+X96Uh3ghjgwnrxTA==
   dependencies:
     babel-eslint "^10.1.0"
     eslint "^7.9.0"

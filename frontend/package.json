@@ -29,7 +29,7 @@
     "cssnano": "^4.1.10",
     "eslint": "^7.17.0",
     "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-finiam": "^1.0.2",
+    "eslint-config-finiam": "^1.0.3",
     "eslint-config-import": "^0.13.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-import": "^2.22.1",
