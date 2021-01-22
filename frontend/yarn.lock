@@ -993,10 +993,10 @@
     execa "^4.0.3"
     npm-run-path "^4.0.1"
 
-"@snowpack/plugin-webpack@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@snowpack/plugin-webpack/-/plugin-webpack-2.2.0.tgz#75037e3e9f9f42d5b4690a6ef3fd15ad47ec129d"
-  integrity sha512-+iajIe0Vrcwm0BuN2Lu5URWMMxKc9kRsHoikr36l0I0f3/TUqXrqV5uJdC/bIK6eaodzQnk8fvV6ecryzviGig==
+"@snowpack/plugin-webpack@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@snowpack/plugin-webpack/-/plugin-webpack-2.3.0.tgz#5f4da0c4afbb8d0151cdd78bdbaf78074925ef08"
+  integrity sha512-x/U29rdYkqPQDHpkAMY+qBhLSOY79KzGPMxfwOv0VlWirYnkMSbRctQ8btZ9tfyUB85Or+wVY2TWj//E8Nf98A==
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/preset-env" "^7.12.1"
