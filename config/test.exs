@@ -18,3 +18,8 @@ config :wallaby,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+# Configures Guardian
+config :phoenix_starter, PhoenixStarterWeb.Auth,
+  issuer: "phoenix_starter",
+  secret_key: "VN5qAZQF/ur9mW53SBMa4ZDqDUJSLnaoOZFV+X/Td3AFQuTSIO0audYgVJdIQglT"

@@ -15,7 +15,17 @@ defmodule PhoenixStarterWeb.ConnCase do
   this option is not recommended for other databases.
   """
 
+  alias PhoenixStarter.Accounts
+  alias PhoenixStarterWeb.Auth
   use ExUnit.CaseTemplate
+
+  @default_opts [
+    store: :cookie,
+    key: "secretkey",
+    encryption_salt: "encrypted cookie salt",
+    signing_salt: "signing salt"
+  ]
+  @signing_opts Plug.Session.init(Keyword.put(@default_opts, :encrypt, false))
 
   using do
     quote do
@@ -36,6 +46,26 @@ defmodule PhoenixStarterWeb.ConnCase do
       Ecto.Adapters.SQL.Sandbox.mode(PhoenixStarter.Repo, {:shared, self()})
     end
 
-    {:ok, conn: Phoenix.ConnTest.build_conn()}
+    {conn, user} =
+      if tags[:authenticated] do
+        {:ok, user} =
+          Accounts.create_user(%{
+            email: "some email",
+            password: "some password",
+            name: "some name"
+          })
+
+        conn =
+          Phoenix.ConnTest.build_conn()
+          |> Plug.Session.call(@signing_opts)
+          |> Plug.Conn.fetch_session()
+          |> Auth.Plug.sign_in(user)
+
+        {conn, user}
+      else
+        {Phoenix.ConnTest.build_conn(), nil}
+      end
+
+    {:ok, conn: conn, user: user}
   end
 end

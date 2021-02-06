@@ -30,6 +30,18 @@ config :phoenix_starter, PhoenixStarterWeb.Endpoint,
   ],
   secret_key_base: secret_key_base
 
+secret_key_guardian =
+  System.get_env("SECRET_KEY_GUARDIAN") ||
+    raise """
+    environment variable SECRET_KEY_GUARDIAN is missing.
+    You can generate one by calling: mix guardian.gen.secret
+    """
+
+config :phoenix_starter, PhoenixStarterWeb.Auth,
+  issuer: "phoenix_starter",
+  secret_key: secret_key_guardian,
+  ttl: {1, :day}
+
 # ## Using releases (Elixir v1.9+)
 #
 # If you are doing OTP releases, you need to instruct Phoenix

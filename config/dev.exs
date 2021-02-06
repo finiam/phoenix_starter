@@ -39,3 +39,8 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
+
+# Configures Guardian
+config :phoenix_starter, PhoenixStarterWeb.Auth,
+  issuer: "phoenix_starter",
+  secret_key: "KkVXKmN8vH5wJF129tkaux/ZGxYKeb14Two0bjGvGl+/MFxgw7OGQxpIfC2/Vw30"

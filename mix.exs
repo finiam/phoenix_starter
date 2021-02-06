@@ -28,6 +28,7 @@ defmodule PhoenixStarter.MixProject do
 
   defp deps do
     [
+      {:argon2_elixir, "~> 2.4"},
       {:cors_plug, "~> 2.0"},
       {:phoenix, "~> 1.5.6"},
       {:phoenix_pubsub, "~> 2.0.0"},
@@ -36,6 +37,7 @@ defmodule PhoenixStarter.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.11"},
       {:gettext, "~> 0.11"},
+      {:guardian, "~> 2.0"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.4"}
       | deps(@env)
