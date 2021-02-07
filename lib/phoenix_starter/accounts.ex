@@ -8,14 +8,14 @@ defmodule PhoenixStarter.Accounts do
     Repo.all(User)
   end
 
-  def get_user!(attrs) when is_list(attrs) do
-    Repo.get_by!(User, attrs)
+  def get_user(attrs) when is_list(attrs) do
+    Repo.get_by(User, attrs)
   end
 
-  def get_user!(id), do: Repo.get!(User, id)
+  def get_user(id), do: Repo.get(User, id)
 
   def authenticate_user(email, password) do
-    get_user!(email: email)
+    get_user(email: email)
     |> authenticate_resource(password)
   end
 

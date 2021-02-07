@@ -10,7 +10,10 @@ defmodule PhoenixStarterWeb.Auth do
 
   def resource_from_claims(claims) do
     id = claims["sub"]
-    resource = Accounts.get_user!(id)
-    {:ok, resource}
+
+    case Accounts.get_user(id) do
+      nil -> {:error, :resource_not_found}
+      user -> {:ok, user}
+    end
   end
 end

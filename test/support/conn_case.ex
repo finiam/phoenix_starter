@@ -46,26 +46,22 @@ defmodule PhoenixStarterWeb.ConnCase do
       Ecto.Adapters.SQL.Sandbox.mode(PhoenixStarter.Repo, {:shared, self()})
     end
 
-    {conn, user} =
-      if tags[:authenticated] do
-        {:ok, user} =
-          Accounts.create_user(%{
-            email: "some email",
-            password: "some password",
-            name: "some name"
-          })
+    conn =
+      Phoenix.ConnTest.build_conn()
+      |> Plug.Session.call(@signing_opts)
+      |> Plug.Conn.fetch_session()
 
-        conn =
-          Phoenix.ConnTest.build_conn()
-          |> Plug.Session.call(@signing_opts)
-          |> Plug.Conn.fetch_session()
-          |> Auth.Plug.sign_in(user)
+    if tags[:authenticated] do
+      {:ok, user} =
+        Accounts.create_user(%{
+          email: "some email",
+          password: "some password",
+          name: "some name"
+        })
 
-        {conn, user}
-      else
-        {Phoenix.ConnTest.build_conn(), nil}
-      end
-
-    {:ok, conn: conn, user: user}
+      {:ok, conn: Auth.Plug.sign_in(conn, user), user: user}
+    else
+      {:ok, conn: conn}
+    end
   end
 end
