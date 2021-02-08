@@ -7,12 +7,12 @@ defmodule PhoenixStarter.AccountsTest do
     alias PhoenixStarter.Accounts.User
 
     @valid_attrs %{
-      email: "some email",
+      email: "email@mail.com",
       password: "some password",
       name: "some name"
     }
     @update_attrs %{
-      email: "some updated email",
+      email: "updated@mail.com",
       password: "some updated password",
       name: "some updated name"
     }
@@ -64,7 +64,7 @@ defmodule PhoenixStarter.AccountsTest do
 
     test "create_user/1 with valid data creates a user" do
       assert {:ok, %User{} = user} = Accounts.create_user(@valid_attrs)
-      assert user.email == "some email"
+      assert user.email == "email@mail.com"
       assert user.name == "some name"
     end
 
@@ -75,7 +75,7 @@ defmodule PhoenixStarter.AccountsTest do
     test "update_user/2 with valid data updates the user" do
       user = create_user()
       assert {:ok, %User{} = user} = Accounts.update_user(user, @update_attrs)
-      assert user.email == "some updated email"
+      assert user.email == "updated@mail.com"
       assert user.name == "some updated name"
     end
 

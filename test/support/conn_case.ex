@@ -54,7 +54,7 @@ defmodule PhoenixStarterWeb.ConnCase do
     if tags[:authenticated] do
       {:ok, user} =
         Accounts.create_user(%{
-          email: "some email",
+          email: "email@mail.com",
           password: "some password",
           name: "some name"
         })

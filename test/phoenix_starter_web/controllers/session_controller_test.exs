@@ -4,12 +4,12 @@ defmodule PhoenixStarterWeb.SessionControllerTest do
   alias PhoenixStarter.Accounts
 
   @user_attrs %{
-    email: "some email",
+    email: "email@mail.com",
     password: "some password",
     name: "some name"
   }
   @login_attrs %{
-    email: "some email",
+    email: "email@mail.com",
     password: "some password"
   }
 
@@ -27,7 +27,7 @@ defmodule PhoenixStarterWeb.SessionControllerTest do
 
       assert %{
                "id" => _id,
-               "email" => "some email",
+               "email" => "email@mail.com",
                "name" => "some name"
              } = json_response(conn, 200)["data"]
     end
@@ -44,7 +44,7 @@ defmodule PhoenixStarterWeb.SessionControllerTest do
     test "returns not found status if password is wrong", %{conn: conn} do
       conn =
         post(conn, Routes.session_path(conn, :create),
-          session: %{email: "some email", password: "bad password"}
+          session: %{email: "email@mail.com", password: "bad password"}
         )
 
       assert conn.status == 404
@@ -53,7 +53,7 @@ defmodule PhoenixStarterWeb.SessionControllerTest do
     test "returns not found status if user does not exist", %{conn: conn} do
       conn =
         post(conn, Routes.session_path(conn, :create),
-          session: %{email: "some email", password: "bad password"}
+          session: %{email: "email@mail.com", password: "bad password"}
         )
 
       assert response(conn, 404)
