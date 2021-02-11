@@ -1,6 +1,10 @@
 defmodule PhoenixStarterWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :phoenix_starter
 
+  if Application.get_env(:phoenix_starter, :sql_sandbox) do
+    plug Phoenix.Ecto.SQL.Sandbox
+  end
+
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
@@ -43,5 +47,6 @@ defmodule PhoenixStarterWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+  plug CORSPlug, origin: ["http://localhost:8080"]
   plug PhoenixStarterWeb.Router
 end

@@ -1,5 +1,9 @@
 use Mix.Config
 
+config :phoenix_starter, PhoenixStarterWeb.Endpoint, server: true
+
+config :phoenix_starter, :sql_sandbox, true
+
 config :phoenix_starter, PhoenixStarter.Repo,
   username: "postgres",
   password: "postgres",

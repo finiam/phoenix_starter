@@ -1,7 +1,0 @@
-.root {
-  color: grey;
-
-  @media (--small) {
-    color: red;
-  }
-}

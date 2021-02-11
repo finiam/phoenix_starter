@@ -5,12 +5,21 @@ defmodule PhoenixStarter.FeatureCase do
     quote do
       use Wallaby.DSL
 
+      alias PhoenixStarter.Accounts
       alias PhoenixStarter.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-
       import PhoenixStarterWeb.Router.Helpers
+      import Wallaby.Query
+
+      def sign_in(session, email, password \\ "foobar") do
+        session
+        |> visit("/login")
+        |> fill_in(text_field("Email"), with: email)
+        |> fill_in(text_field("Password"), with: "foobar")
+        |> click(button("Submit"))
+      end
     end
   end
 

@@ -10,7 +10,6 @@ defmodule PhoenixStarterWeb.Router do
   end
 
   pipeline :api do
-    plug CORSPlug, origin: "*"
     plug :fetch_session
     plug :accepts, ["json"]
   end
