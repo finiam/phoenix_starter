@@ -5,12 +5,12 @@ defmodule PhoenixStarterWeb.UserControllerTest do
   alias PhoenixStarter.Accounts.User
 
   @create_attrs %{
-    email: "some email",
+    email: "email@mail.com",
     password: "some password",
     name: "some name"
   }
   @update_attrs %{
-    email: "some updated email",
+    email: "updated@mail.com",
     password: "some updated password",
     name: "some updated name"
   }
@@ -22,7 +22,7 @@ defmodule PhoenixStarterWeb.UserControllerTest do
 
       assert %{
                "id" => _id,
-               "email" => "some email",
+               "email" => "email@mail.com",
                "name" => "some name"
              } = json_response(conn, 200)["data"]
     end
@@ -34,7 +34,7 @@ defmodule PhoenixStarterWeb.UserControllerTest do
 
       assert %User{
                id: _id,
-               email: "some email",
+               email: "email@mail.com",
                name: "some name"
              } = user
     end
@@ -59,7 +59,7 @@ defmodule PhoenixStarterWeb.UserControllerTest do
 
       assert %{
                "id" => _id,
-               "email" => "some email",
+               "email" => "email@mail.com",
                "name" => "some name"
              } = json_response(conn, 200)["data"]
     end
@@ -78,7 +78,7 @@ defmodule PhoenixStarterWeb.UserControllerTest do
 
       assert %{
                "id" => _id,
-               "email" => "some updated email",
+               "email" => "updated@mail.com",
                "name" => "some updated name"
              } = json_response(conn, 200)["data"]
     end
@@ -91,7 +91,7 @@ defmodule PhoenixStarterWeb.UserControllerTest do
 
       assert %User{
                id: _id,
-               email: "some updated email",
+               email: "updated@mail.com",
                name: "some updated name"
              } = updated_user
     end

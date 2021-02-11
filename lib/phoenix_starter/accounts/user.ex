@@ -4,6 +4,7 @@ defmodule PhoenixStarter.Accounts.User do
 
   @fields [:email, :name, :password]
   @required_fields [:email, :name, :password]
+  @email_regex ~r/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/
 
   schema "users" do
     field :email, :string
@@ -20,6 +21,8 @@ defmodule PhoenixStarter.Accounts.User do
     |> cast(attrs, @fields)
     |> validate_required(@required_fields)
     |> unique_constraint(:email, downcase: true)
+    |> validate_format(:email, @email_regex)
+    |> validate_length(:password, min: 6)
     |> encrypt_password()
   end
 
