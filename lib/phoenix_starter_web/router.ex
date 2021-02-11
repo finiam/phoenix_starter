@@ -11,14 +11,30 @@ defmodule PhoenixStarterWeb.Router do
 
   pipeline :api do
     plug CORSPlug, origin: "*"
-
+    plug :fetch_session
     plug :accepts, ["json"]
+  end
+
+  pipeline :logged_in do
+    plug PhoenixStarterWeb.Auth.Pipeline
   end
 
   scope "/api", PhoenixStarterWeb do
     pipe_through :api
 
     get "/example", ExampleController, :index
+    resources "/user", UserController, only: [:create]
+    resources "/sessions", SessionController, only: [:create]
+  end
+
+  scope "/api", PhoenixStarterWeb do
+    pipe_through [:api, :logged_in]
+
+    resources "/user", UserController,
+      only: [:show, :update, :delete],
+      singleton: true
+
+    resources "/sessions", SessionController, only: [:delete], singleton: true
   end
 
   scope "/", PhoenixStarterWeb do

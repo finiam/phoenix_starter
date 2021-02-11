@@ -15,6 +15,9 @@
   "env": {
     "SECRET_KEY_BASE": {
       "generator": "secret"
+    },
+    "SECRET_KEY_GUARDIAN": {
+      "generator": "secret"
     }
   }
 }

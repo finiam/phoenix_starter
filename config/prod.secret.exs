@@ -12,7 +12,7 @@ database_url =
     """
 
 config :phoenix_starter, PhoenixStarter.Repo,
-  # ssl: true,
+  ssl: true,
   url: database_url,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10")
 
@@ -29,6 +29,18 @@ config :phoenix_starter, PhoenixStarterWeb.Endpoint,
     transport_options: [socket_opts: [:inet6]]
   ],
   secret_key_base: secret_key_base
+
+secret_key_guardian =
+  System.get_env("SECRET_KEY_GUARDIAN") ||
+    raise """
+    environment variable SECRET_KEY_GUARDIAN is missing.
+    You can generate one by calling: mix guardian.gen.secret
+    """
+
+config :phoenix_starter, PhoenixStarterWeb.Auth,
+  issuer: "phoenix_starter",
+  secret_key: secret_key_guardian,
+  ttl: {1, :day}
 
 # ## Using releases (Elixir v1.9+)
 #
