@@ -25,8 +25,8 @@ jobs:
     - name: Setup elixir
       uses: actions/setup-elixir@v1
       with:
-        elixir-version: 1.11.1
-        otp-version: 23.1.1
+        elixir-version: 1.11.3
+        otp-version: 23.2.4
 
     - name: Cache elixir deps
       uses: actions/cache@v1
@@ -48,9 +48,9 @@ jobs:
       uses: actions/cache@v1
       with:
         path: _build
-        key: ${{ runner.OS }}-build-
+        key: ${{ runner.os }}-build-
         restore-keys: |
-          ${{ runner.OS }}-build-
+          ${{ runner.os }}-build-
 
     - name: Setup latest Chromedriver
       uses: nanasess/setup-chromedriver@master
