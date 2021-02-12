@@ -21,6 +21,11 @@ Also, one of the most important changes is the usage of `wallaby` to make fullst
 
 During development, you should use the build from the `snowpack` dev-server under port 8080. The frontend is automatically configured to use `localhost:4000` (phoenix endpoints) during dev, and `/` on testing and production.
 
+## Auth
+
+We also have a basic auth set up. You check the login routes on the frontend and the logic on the backend. Currently there is sign up, login and logout logic. The auth logic can work via the `Phoenix` session, which in turn uses a secure cookie, which is also advised for web clients.
+
+User's have a email and a password (hashed with argon2). Currently there is no email logic, but that is on the roadmap.
 
 ## About
 
