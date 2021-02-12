@@ -1,6 +1,8 @@
 defmodule PhoenixStarterWeb.Router do
   use PhoenixStarterWeb, :router
 
+  import Phoenix.LiveDashboard.Router
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -16,6 +18,16 @@ defmodule PhoenixStarterWeb.Router do
 
   pipeline :logged_in do
     plug PhoenixStarterWeb.Auth.Pipeline
+  end
+
+  pipeline :admin do
+    plug PhoenixStarterWeb.Auth.AdminPipeline
+  end
+
+  scope "/admin" do
+    pipe_through [:browser, :admin]
+
+    live_dashboard "/analytics", metrics: PhoenixStarterWeb.Telemetry
   end
 
   scope "/api", PhoenixStarterWeb do
