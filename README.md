@@ -13,17 +13,19 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
 
-## Diferences to the classic template
+## Diferences to the `phx.new`
 
-`phx new` does a great job of a bootstrapping a Phoenix app for you, but we usually run things a little different. This template has a few differences, mostly on the frontend side of things. We run all of our frontend code at the root of the project, mainly due to IDE and code editors limitations, that expect linters and configs to be at the root of the project. We also setup React which has been our SPA of choice nowadays.
+`phx new` does a great job of a bootstrapping a Phoenix app for you, but we usually run things a little different. This template has a few differences, mostly on the frontend side of things. We run all of our frontend code through `Snowpack` and that can be deployed as a standalone app. Here we serve the app at the `root` of the project, so `/`, and catching all fallback requests there, so client-side routing works. You can however, split it up entirely and serve the frontend at a different place.
 
-Also, one of the most important changes is the usage of `wallaby` to make fullstack integration testing. So we can test the whole application.
+Also, one of the most important changes is the usage of `wallaby` to make fullstack integration testing. So we can test the whole application. That's where the `PageController` acts, serving the `index.html` that snowpack produces during tests.
 
-## Frontend pipeline
+During development, you should use the build from the `snowpack` dev-server under port 8080. The frontend is automatically configured to use `localhost:4000` (phoenix endpoints) during dev, and `/` on testing and production.
 
-We use Webpack to build the frontend assets. The entrypoint is `frontend/index.js`, currently this repo is configured to build a general purpose React app using PostCSS with CSS modules for styling. It also loads `jpg|png|webp|gif|mp4` files, inlining them if they are less than 5kb.
+## Auth
 
-Files under `frontend` get transformed and outputted to `priv/static/assets`, which is where Phoenix expect static assets to be. Webpack processes every file through the entrypoint, so just organize files as you want. The only exception is the `frontend/static` folder. Files under that directory get copied as is to `priv/static`. Use that folder for favicons, robots files and any static file you need to host at the root of the app. WARNING: Don't forget to add those files to the `endpoint.ex` file under the `Plug.static` rule. Phoenix only serves a whitelist of those files.
+We also have a basic auth set up. You check the login routes on the frontend and the logic on the backend. Currently there is sign up, login and logout logic. The auth logic can work via the `Phoenix` session, which in turn uses a secure cookie, which is also advised for web clients.
+
+User's have a email and a password (hashed with argon2). Currently there is no email logic, but that is on the roadmap.
 
 ## About
 
