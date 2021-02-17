@@ -8,6 +8,7 @@ defmodule PhoenixStarter.Application do
   def start(_type, _args) do
     children = [
       PhoenixStarter.Repo,
+      PhoenixStarterWeb.Telemetry,
       PhoenixStarterWeb.Endpoint,
       {Phoenix.PubSub,
        [name: PhoenixStarter.PubSub, adapter: Phoenix.PubSub.PG2]}

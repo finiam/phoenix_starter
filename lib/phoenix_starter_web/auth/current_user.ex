@@ -1,5 +1,6 @@
 defmodule PhoenixStarterWeb.Auth.CurrentUser do
   alias PhoenixStarterWeb.Auth
+
   def init(opts), do: opts
 
   def call(conn, _opts) do

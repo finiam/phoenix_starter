@@ -2,15 +2,18 @@ defmodule PhoenixStarter.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
 
-  @fields [:email, :name, :password]
+  @fields [:email, :name, :password, :role]
   @required_fields [:email, :name, :password]
   @email_regex ~r/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/
+
+  @roles ["admin", "user"]
 
   schema "users" do
     field :email, :string
     field :password, :string, virtual: true
     field :encrypted_password, :binary
     field :name, :string
+    field :role, :string, default: "user"
 
     timestamps()
   end
@@ -23,6 +26,7 @@ defmodule PhoenixStarter.Accounts.User do
     |> unique_constraint(:email, downcase: true)
     |> validate_format(:email, @email_regex)
     |> validate_length(:password, min: 6)
+    |> validate_inclusion(:role, @roles)
     |> encrypt_password()
   end
 
