@@ -3,11 +3,12 @@ import React, {
   ReactNode,
   useContext,
   useEffect,
+  useMemo,
   useState,
 } from "react";
 import { useHistory } from "react-router-dom";
-import { login as apiLogin, logout as apiLogout } from "root/api/sessions";
-import { getCurrentUser, signUp as apiSignUp } from "root/api/users";
+import * as sessionsApi from "root/api/sessions";
+import * as usersApi from "root/api/users";
 
 interface AuthContextType {
   user?: User;
@@ -32,7 +33,7 @@ export function AuthProvider({
   const history = useHistory();
 
   useEffect(() => {
-    getCurrentUser()
+    usersApi.getCurrentUser()
       .then((user) => setUser(user))
       .catch((_error) => {})
       .finally(() => setLoadingInitial(false));
@@ -41,7 +42,7 @@ export function AuthProvider({
   function login(email: string, password: string) {
     setLoading(true);
 
-    apiLogin({ email, password })
+    sessionsApi.login({ email, password })
       .then((user) => {
         setUser(user);
         history.push("/");
@@ -53,7 +54,7 @@ export function AuthProvider({
   function signUp(email: string, name: string, password: string) {
     setLoading(true);
 
-    apiSignUp({ email, name, password })
+    usersApi.signUp({ email, name, password })
       .then((user) => {
         setUser(user);
         history.push("/");
@@ -63,13 +64,24 @@ export function AuthProvider({
   }
 
   function logout() {
-    apiLogout().then(() => setUser(undefined));
+    sessionsApi.logout().then(() => setUser(undefined));
   }
 
+  // Make the provider update only when it should
+  const memoedValue = useMemo(
+    () => ({
+      user,
+      loading,
+      error,
+      login,
+      signUp,
+      logout,
+    }),
+    [user, loading, error]
+  );
+
   return (
-    <AuthContext.Provider
-      value={{ user, loading, error, login, signUp, logout }}
-    >
+    <AuthContext.Provider value={memoedValue}>
       {!loadingInitial && children}
     </AuthContext.Provider>
   );
