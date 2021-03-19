@@ -889,12 +889,13 @@
     dotenv "^8.2.0"
     dotenv-expand "^5.1.0"
 
-"@snowpack/plugin-postcss@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@snowpack/plugin-postcss/-/plugin-postcss-1.1.0.tgz#ade84429f43ad5c60e5af8da4628521e78183245"
-  integrity sha512-5QIP3Ec8l2cH1zoWMPYYIJFaRRRkDU94lAU6wTiI/9ENVp9LTt0QQOIbWn0U+5zUOia9ysSk83DDlDsnulBDcA==
+"@snowpack/plugin-postcss@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@snowpack/plugin-postcss/-/plugin-postcss-1.2.0.tgz#0eed4cfe356df4c09fe80c9a78a30d1080c2d738"
+  integrity sha512-PwTBRbRWxJTTLlk9VOK6IUg6BR1KdQfGD8Gle7+dIdQ/gtlKRyA39qaO67VS9wSLm+9gDasfo6vWmydBJfEb4w==
   dependencies:
-    execa "^5.0.0"
+    postcss-load-config "^3.0.1"
+    workerpool "^6.1.2"
 
 "@snowpack/plugin-react-refresh@^2.4.0":
   version "2.4.0"
@@ -5585,10 +5586,10 @@ postcss-less@^3.1.4:
   dependencies:
     postcss "^7.0.14"
 
-postcss-load-config@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-load-config/-/postcss-load-config-3.0.0.tgz#850bb066edd65b734329eacf83af0c0764226c87"
-  integrity sha512-lErrN8imuEF1cSiHBV8MiR7HeuzlDpCGNtaMyYHlOBuJHHOGw6S4xOMZp8BbXPr7AGQp14L6PZDlIOpfFJ6f7w==
+postcss-load-config@^3.0.0, postcss-load-config@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/postcss-load-config/-/postcss-load-config-3.0.1.tgz#d214bf9cfec1608ffaf0f4161b3ba20664ab64b9"
+  integrity sha512-/pDHe30UYZUD11IeG8GWx9lNtu1ToyTsZHnyy45B4Mrwr/Kb6NgYl7k753+05CJNKnjbwh4975amoPJ+TEjHNQ==
   dependencies:
     cosmiconfig "^7.0.0"
     import-cwd "^3.0.0"
@@ -7755,6 +7756,11 @@ worker-farm@^1.7.0:
   integrity sha512-rvw3QTZc8lAxyVrqcSGVm5yP/IJ2UcB3U0graE3LCFoZ0Yn2x4EoVSqJKdB/T5M+FLcRPjz4TDacRf3OCfNUzw==
   dependencies:
     errno "~0.1.7"
+
+workerpool@^6.1.2:
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/workerpool/-/workerpool-6.1.2.tgz#52bb8c05d89e9b699b68d39f9687419cb2f6ca5c"
+  integrity sha512-I/gDW4LwV3bslk4Yiqd4XoNYlnvV03LON7KuIjmQ90yDnKND1sR2LK/JA1g1tmd71oe6KPSvN0JpBzXIH6xAgA==
 
 wrap-ansi@^7.0.0:
   version "7.0.0"
