@@ -3,6 +3,7 @@
 set -e
 . "./bin/functions"
 test -f .envrc && . "./.envrc"
+NODE_ENV=production
 
 pp_info "build" "Building the frontend assets..."
 

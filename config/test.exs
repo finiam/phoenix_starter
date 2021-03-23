@@ -18,7 +18,7 @@ config :phoenix_starter, PhoenixStarterWeb.Endpoint,
 config :wallaby,
   driver: Wallaby.Chrome,
   chrome: [headless: true],
-  screenshot_on_failure: false
+  screenshot_on_failure: true
 
 # Print only warnings and errors during test
 config :logger, level: :warn
