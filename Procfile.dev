@@ -1,0 +1,2 @@
+frontend: yarn dev
+backend: iex -S mix phx.server +BI

@@ -1,5 +1,15 @@
 # PhoenixStarter
 
+A starter that combines Phoenix + Snowpack + React. (but you can use anything else, like Svelte, which is great)
+
+## Prerequisites
+
+- postgres - install via Homebrew or your preferred package manager
+- asdf-vm - [check their website](https://asdf-vm.com/#/core-manage-asdf)
+- foreman - `foreman` on Homebrew and `ruby-foreman` on Ubuntu
+
+## Getting Started
+
 To start your Phoenix app:
   * Install dependencies and setup database with `bin/setup`
   * Start Phoenix and webpack with `bin/server`
