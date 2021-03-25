@@ -3,10 +3,10 @@ import { Switch, Route, Redirect, RouteProps } from "react-router-dom";
 import loadable from "@loadable/component";
 import useAuth from "root/hooks/useAuth";
 
-type AsyncRouteProps = RouteProps & { importPath: Promise<any> };
+type AsyncRouteProps = RouteProps & { importPath: () => Promise<any> };
 
-function AsyncRoute(props: AsyncRouteProps) {
-  return <Route {...props} component={loadable(() => props.importPath)} />;
+function AsyncRoute({ importPath, ...props }: AsyncRouteProps) {
+  return <Route {...props} component={loadable(importPath)} />;
 }
 
 function AuthenticatedRoute(props: AsyncRouteProps) {
@@ -23,17 +23,17 @@ export default function Router() {
       <AuthenticatedRoute
         exact
         path="/"
-        importPath={import("root/pages/HomePage")}
+        importPath={() => import("root/pages/HomePage")}
       />
       <AsyncRoute
         exact
         path="/login"
-        importPath={import("root/pages/LoginPage")}
+        importPath={() => import("root/pages/LoginPage")}
       />
       <AsyncRoute
         exact
         path="/sign_up"
-        importPath={import("root/pages/SignUpPage")}
+        importPath={() => import("root/pages/SignUpPage")}
       />
     </Switch>
   );

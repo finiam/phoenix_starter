@@ -6,7 +6,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import * as sessionsApi from "root/api/sessions";
 import * as usersApi from "root/api/users";
 
@@ -31,9 +31,15 @@ export function AuthProvider({
   const [loading, setLoading] = useState<boolean>(false);
   const [loadingInitial, setLoadingInitial] = useState<boolean>(true);
   const history = useHistory();
+  const location = useLocation();
 
   useEffect(() => {
-    usersApi.getCurrentUser()
+    if (error) setError(undefined);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    usersApi
+      .getCurrentUser()
       .then((user) => setUser(user))
       .catch((_error) => {})
       .finally(() => setLoadingInitial(false));
@@ -42,7 +48,8 @@ export function AuthProvider({
   function login(email: string, password: string) {
     setLoading(true);
 
-    sessionsApi.login({ email, password })
+    sessionsApi
+      .login({ email, password })
       .then((user) => {
         setUser(user);
         history.push("/");
@@ -54,7 +61,8 @@ export function AuthProvider({
   function signUp(email: string, name: string, password: string) {
     setLoading(true);
 
-    usersApi.signUp({ email, name, password })
+    usersApi
+      .signUp({ email, name, password })
       .then((user) => {
         setUser(user);
         history.push("/");
