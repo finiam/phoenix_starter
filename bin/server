@@ -4,8 +4,4 @@ set -e
 . "./bin/functions"
 test -f .envrc && . "./.envrc"
 
-pp_info "server" "Starting development server..."
-yarn dev&
-iex -S mix phx.server
-
-trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
+foreman start --procfile=Procfile.dev

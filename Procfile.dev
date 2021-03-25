@@ -1,0 +1,2 @@
+frontend: yarn dev
+backend: mix phx.server
