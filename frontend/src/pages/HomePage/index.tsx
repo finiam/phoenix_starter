@@ -4,12 +4,12 @@ import potato from "root/assets/potato.jpg";
 
 import styles from "./index.module.css";
 
-export default function HomePage() {
+export default function HomePage(): JSX.Element {
   const { user, logout } = useAuth();
 
   return (
     <div className={styles.root}>
-      <p>Hello {user!.email}</p>
+      <p>Hello {user.email}</p>
 
       <button type="button" onClick={logout}>
         Logout

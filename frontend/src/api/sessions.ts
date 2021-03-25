@@ -9,7 +9,7 @@ export async function login(params: {
   return response.data.data;
 }
 
-export async function logout() {
+export async function logout(): Promise<unknown> {
   const response = await redaxios.delete("/api/sessions");
 
   return response.data.data;

@@ -4,7 +4,7 @@ import useAuth from "root/hooks/useAuth";
 
 import styles from "./index.module.css";
 
-export default function Login() {
+export default function Login(): JSX.Element {
   const { login, loading, error } = useAuth();
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -19,17 +19,19 @@ export default function Login() {
     <form className={styles.root} onSubmit={handleSubmit}>
       <h1>Login</h1>
 
-      <label>
+      <label htmlFor="email">
         Email
-        <input name="email" />
+        <input id="email" name="email" />
       </label>
 
-      <label>
+      <label htmlFor="password">
         Password
-        <input name="password" type="password" />
+        <input id="password" name="password" type="password" />
       </label>
 
-      <button disabled={loading}>Submit</button>
+      <button disabled={loading} type="submit">
+        Submit
+      </button>
 
       {error && <p className={styles.error}>Bad login/password</p>}
 
