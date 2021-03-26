@@ -43,6 +43,7 @@ export function AuthProvider({
     usersApi
       .getCurrentUser()
       .then((newUser) => setUser(newUser))
+      .catch((_error) => {})
       .finally(() => setLoadingInitial(false));
   }, []);
 
