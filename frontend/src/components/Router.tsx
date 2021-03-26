@@ -17,7 +17,7 @@ function AuthenticatedRoute(props: AsyncRouteProps) {
   return <AsyncRoute {...props} />;
 }
 
-export default function Router() {
+export default function Router(): JSX.Element {
   return (
     <Switch>
       <AuthenticatedRoute

@@ -4,7 +4,7 @@ import useAuth from "root/hooks/useAuth";
 
 import styles from "./index.module.css";
 
-export default function SignUpPage() {
+export default function SignUpPage(): JSX.Element {
   const { signUp, loading, error } = useAuth();
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -23,25 +23,27 @@ export default function SignUpPage() {
     <form className={styles.root} onSubmit={handleSubmit}>
       <h1>Sign up</h1>
 
-      <label>
+      <label htmlFor="id">
         Name
-        <input name="name" />
+        <input id="name" name="name" />
         {error && <p className={styles.error}>{error.data.errors.name}</p>}
       </label>
 
-      <label>
+      <label htmlFor="email">
         Email
-        <input name="email" type="email" />
+        <input id="email" name="email" type="email" />
         {error && <p className={styles.error}>{error.data.errors.email}</p>}
       </label>
 
-      <label>
+      <label htmlFor="password">
         Password
-        <input name="password" type="password" />
+        <input id="password" name="password" type="password" />
         {error && <p className={styles.error}>{error.data.errors.password}</p>}
       </label>
 
-      <button disabled={loading}>Submit</button>
+      <button disabled={loading} type="submit">
+        Submit
+      </button>
 
       <Link to="/login">Login</Link>
     </form>

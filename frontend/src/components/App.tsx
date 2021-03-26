@@ -4,7 +4,7 @@ import { AuthProvider } from "root/hooks/useAuth";
 import redaxios from "redaxios";
 import Router from "./Router";
 
-export default function App() {
+export default function App(): JSX.Element {
   return (
     <BrowserRouter>
       <AuthProvider>
@@ -16,6 +16,7 @@ export default function App() {
 
 // Set your API baseUrl here
 //
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 if (import.meta.env.MODE === "development") {
   redaxios.defaults.baseURL = "http://localhost:4000";

@@ -6,14 +6,15 @@ import React, {
   useMemo,
   useState,
 } from "react";
+import type { Response } from "redaxios";
 import { useHistory, useLocation } from "react-router-dom";
 import * as sessionsApi from "root/api/sessions";
 import * as usersApi from "root/api/users";
 
-interface AuthContextType {
-  user?: User;
+export interface AuthContextType {
+  user: User;
   loading: boolean;
-  error?: any;
+  error?: Response<any>;
   login: (email: string, password: string) => void;
   signUp: (email: string, name: string, password: string) => void;
   logout: () => void;
@@ -27,20 +28,21 @@ export function AuthProvider({
   children: ReactNode;
 }): JSX.Element {
   const [user, setUser] = useState<User>();
-  const [error, setError] = useState<any>();
+  const [error, setError] = useState<Response<any> | null>();
   const [loading, setLoading] = useState<boolean>(false);
   const [loadingInitial, setLoadingInitial] = useState<boolean>(true);
   const history = useHistory();
   const location = useLocation();
 
   useEffect(() => {
-    if (error) setError(undefined);
+    if (error) setError(null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
 
   useEffect(() => {
     usersApi
       .getCurrentUser()
-      .then((user) => setUser(user))
+      .then((newUser) => setUser(newUser))
       .catch((_error) => {})
       .finally(() => setLoadingInitial(false));
   }, []);
@@ -50,11 +52,11 @@ export function AuthProvider({
 
     sessionsApi
       .login({ email, password })
-      .then((user) => {
-        setUser(user);
+      .then((newUser) => {
+        setUser(newUser);
         history.push("/");
       })
-      .catch((error) => setError(error))
+      .catch((newError) => setError(newError))
       .finally(() => setLoading(false));
   }
 
@@ -63,11 +65,11 @@ export function AuthProvider({
 
     usersApi
       .signUp({ email, name, password })
-      .then((user) => {
-        setUser(user);
+      .then((newUser) => {
+        setUser(newUser);
         history.push("/");
       })
-      .catch((error) => setError(error))
+      .catch((newError) => setError(newError))
       .finally(() => setLoading(false));
   }
 
@@ -85,16 +87,17 @@ export function AuthProvider({
       signUp,
       logout,
     }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [user, loading, error]
   );
 
   return (
-    <AuthContext.Provider value={memoedValue}>
+    <AuthContext.Provider value={memoedValue as AuthContextType}>
       {!loadingInitial && children}
     </AuthContext.Provider>
   );
 }
 
-export default function useAuth() {
+export default function useAuth(): AuthContextType {
   return useContext(AuthContext);
 }
