@@ -27,7 +27,6 @@ jobs:
       with:
         elixir-version: 1.11.3
         otp-version: 23.2.4
-        experimental-otp: true
 
     - name: Cache elixir deps
       uses: actions/cache@v1
