@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, {
   createContext,
   ReactNode,
@@ -7,8 +6,8 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { useHistory } from "react-router-dom";
 import type { Response } from "redaxios";
+import { useHistory, useLocation } from "react-router-dom";
 import * as sessionsApi from "root/api/sessions";
 import * as usersApi from "root/api/users";
 
@@ -33,6 +32,12 @@ export function AuthProvider({
   const [loading, setLoading] = useState<boolean>(false);
   const [loadingInitial, setLoadingInitial] = useState<boolean>(true);
   const history = useHistory();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (error) setError(null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname]);
 
   useEffect(() => {
     usersApi
