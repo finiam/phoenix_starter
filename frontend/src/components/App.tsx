@@ -18,5 +18,5 @@ export default function App(): JSX.Element {
 //
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-redaxios.defaults.baseURL = import.meta.env.SNOWPACK_PUBLIC_API_URL || "/";
+redaxios.defaults.baseURL = import.meta.env.SNOWPACK_PUBLIC_API_URL;
 redaxios.defaults.withCredentials = true;
