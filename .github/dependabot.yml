@@ -1,0 +1,58 @@
+version: 2
+updates:
+- package-ecosystem: mix
+  directory: "/"
+  schedule:
+    interval: weekly
+    day: friday
+    time: "14:00"
+    timezone: Europe/Lisbon
+  open-pull-requests-limit: 10
+- package-ecosystem: npm
+  directory: "/frontend"
+  schedule:
+    interval: weekly
+    day: friday
+    time: "14:00"
+    timezone: Europe/Lisbon
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: snowpack
+    versions:
+    - 3.1.2
+    - 3.2.2
+    - 3.3.5
+  - dependency-name: cssnano
+    versions:
+    - 4.1.11
+    - 5.0.1
+  - dependency-name: "@typescript-eslint/parser"
+    versions:
+    - 4.21.0
+    - 4.22.0
+  - dependency-name: "@typescript-eslint/eslint-plugin"
+    versions:
+    - 4.21.0
+    - 4.22.0
+  - dependency-name: postcss
+    versions:
+    - 8.2.12
+    - 8.2.9
+  - dependency-name: eslint-plugin-prettier
+    versions:
+    - 3.4.0
+  - dependency-name: eslint-config-prettier
+    versions:
+    - 8.2.0
+  - dependency-name: typescript
+    versions:
+    - 4.2.4
+  - dependency-name: eslint-plugin-react
+    versions:
+    - 7.23.2
+  - dependency-name: eslint
+    versions:
+    - 7.22.0
+  - dependency-name: "@snowpack/plugin-postcss"
+    versions:
+    - 1.2.0
