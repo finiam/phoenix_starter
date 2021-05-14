@@ -9,7 +9,7 @@
     "lint-styles": "stylelint './**/*.css'"
   },
   "dependencies": {
-    "@loadable/component": "^5.14.1",
+    "@loadable/component": "^5.15.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
