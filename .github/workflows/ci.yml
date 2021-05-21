@@ -75,3 +75,29 @@ jobs:
       uses: zaproxy/action-full-scan@v0.2.0
       with:
         target: 'https://finiam-phoenix-starter.herokuapp.com'
+
+    - name: Crashtest Security Action Step
+          id: crashtest-security
+          uses: crashtest-security/crashtest-security-action@v1
+          with:
+            crashtest-webhook: '${{ secrets.CRASHTEST_WEBHOOK }}'
+            pull-report: 'true'
+
+    - name: Publish Test Report
+      uses: mikepenz/action-junit-report@v1
+      with:
+        report_paths: 'report.xml'
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Test for public javascript library vulnerabilities
+      uses: lirantal/is-website-vulnerable@master
+      with:
+        scan-url: "https://finiam-phoenix-starter.herokuapp.com"
+
+    - name: Dalfox scan
+      uses: hahwul/action-dalfox@main
+      id: xss-result
+      with:
+        target: 'https://finiam-phoenix-starter.herokuapp.com'
+        mode: url
+        cmd_options: '--follow-redirects'
