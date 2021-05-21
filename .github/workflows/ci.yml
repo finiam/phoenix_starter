@@ -100,7 +100,6 @@ jobs:
       uses: sobelow/action@v1
       with:
         flags: '-i Config'
-        report: "false"
     - name: Report sobelow
       uses: github/codeql-action/upload-sarif@v1
       with:
