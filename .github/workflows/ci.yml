@@ -57,8 +57,10 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        sudo apt install inotify-tools
+        sudo apt install inotify-tools curl git
         sudo gem install foreman
+        git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
+        echo ". $HOME/.asdf/asdf.sh" >> ~/.bashrc
         bin/setup
         yarn
 
