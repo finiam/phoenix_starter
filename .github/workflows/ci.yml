@@ -74,7 +74,7 @@ jobs:
     - name: ZAP Scan
       uses: zaproxy/action-full-scan@v0.2.0
       with:
-        target: 'https://finiam-phoenix-starter.herokuapp.com'
+        target: 'https://finiam-phoenix-starter.herokuapp.com\nhttps://finiam-phoenix-starter.herokuapp.com/api/example\nhttps://finiam-phoenix-starter.herokuapp.com/api/user\nhttps://finiam-phoenix-starter.herokuapp.com/api/sessions\nhttps://finiam-phoenix-starter.herokuapp.com/admin/analytics '
 
     - name: Test for public javascript library vulnerabilities
       uses: lirantal/is-website-vulnerable@master
@@ -89,8 +89,19 @@ jobs:
         mode: url
         cmd_options: '--follow-redirects'
 
+    - name: Dalfox scan
+      uses: hahwul/action-dalfox@main
+      id: pipe-result
+      with:
+        target: 'https://finiam-phoenix-starter.herokuapp.com\nhttps://finiam-phoenix-starter.herokuapp.com/api/example\nhttps://finiam-phoenix-starter.herokuapp.com/api/user\nhttps://finiam-phoenix-starter.herokuapp.com/api/sessions\nhttps://finiam-phoenix-starter.herokuapp.com/admin/analytics '
+        mode: pipe
+
     - name: Sobelow Action
       uses: sobelow/action@v1
       with:
         flags: '-i Config'
         report: "false"
+    - name: Report sobelow
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: results.sarif
