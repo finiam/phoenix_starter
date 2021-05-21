@@ -57,7 +57,7 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        apt install inotify-tools
+        sudo apt install inotify-tools
         mix deps.get
         yarn
 
