@@ -69,3 +69,8 @@ jobs:
 
     - name: Run Tests
       run: mix test
+
+    - name: ZAP Scan
+      uses: zaproxy/action-full-scan@v0.2.0
+      with:
+        target: 'https://finiam-phoenix-starter.herokuapp.com'
