@@ -74,7 +74,7 @@ jobs:
     - name: ZAP Scan
       uses: zaproxy/action-full-scan@v0.2.0
       with:
-        target: 'https://finiam-phoenix-starter.herokuapp.com\nhttps://finiam-phoenix-starter.herokuapp.com/api/example\nhttps://finiam-phoenix-starter.herokuapp.com/api/user\nhttps://finiam-phoenix-starter.herokuapp.com/api/sessions\nhttps://finiam-phoenix-starter.herokuapp.com/admin/analytics '
+        target: 'https://finiam-phoenix-starter.herokuapp.com'
 
     - name: Test for public javascript library vulnerabilities
       uses: lirantal/is-website-vulnerable@master
