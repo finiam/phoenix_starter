@@ -60,7 +60,7 @@ jobs:
         sudo apt install inotify-tools
         mix deps.get
         yarn
-        gem install foreman
+        sudo gem install foreman
 
     - name: Linting
       run: |
