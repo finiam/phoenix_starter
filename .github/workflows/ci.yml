@@ -85,6 +85,6 @@ jobs:
       uses: hahwul/action-dalfox@main
       id: xss-result
       with:
-        target: 'https://finiam-phoenix-starter.herokuapp.com'
+        target: 'https://finiam-phoenix-starter.herokuapp.com\nhttps://finiam-phoenix-starter.herokuapp.com/login'
         mode: url
         cmd_options: '--follow-redirects'
