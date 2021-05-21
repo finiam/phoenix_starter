@@ -9,8 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    run: |
-      apt install inotify-tools
     services:
       postgres:
         image: postgres:11
@@ -59,6 +57,7 @@ jobs:
 
     - name: Install Dependencies
       run: |
+        apt install inotify-tools
         mix deps.get
         yarn
 
