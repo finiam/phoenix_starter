@@ -51,7 +51,8 @@ pp_info "setup" "Installing elixir dependencies..."
 MIX_ENV=$env mix local.hex --force
 MIX_ENV=$env mix local.rebar --force
 MIX_ENV=$env mix deps.get
-mix archive.install hex phx_new 1.4.8 --force
+MIX_ENV=$env mix archive.install hex phx_new 1.5.9 --force
+MIX_ENV=$env mix ecto.setup
 
 echo ""
 pp_info "setup" "Installing node dependencies..."
