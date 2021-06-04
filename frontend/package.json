@@ -46,7 +46,7 @@
     "postcss-custom-media": "^8.0.0",
     "postcss-nested": "^5.0.5",
     "prettier": "^2.3.0",
-    "snowpack": "^3.3.2",
+    "snowpack": "^3.5.5",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-order": "^4.1.0",
