@@ -927,10 +927,10 @@
     dotenv "^8.2.0"
     dotenv-expand "^5.1.0"
 
-"@snowpack/plugin-postcss@^1.4.1":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@snowpack/plugin-postcss/-/plugin-postcss-1.4.1.tgz#21aa7b0633204d60bf3a82a956964d641f172ffa"
-  integrity sha512-igFSEIje1akoHgnHqNfGSetxMb6V9O9ygMoKtXlEfHaEQhABxZd5a9wbZQoOoDIDCECzmy3DIavM7k1qb2q59Q==
+"@snowpack/plugin-postcss@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@snowpack/plugin-postcss/-/plugin-postcss-1.4.2.tgz#c450afcf4f88862da82c5824eae9c4ec26b09540"
+  integrity sha512-4ba0ZSz9PyQ13kisQWqFe9NIxILeq1/AzW8DFKAu1w3H89rNg54uto259kPc4/s9ajB6eiccq7oQjwxZonRGag==
   dependencies:
     minimatch "^3.0.4"
     normalize-path "^3.0.0"
