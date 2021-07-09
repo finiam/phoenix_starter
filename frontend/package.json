@@ -25,7 +25,7 @@
     "@snowpack/plugin-webpack": "^3.0.0",
     "@types/loadable__component": "^5.13.3",
     "@types/react": "^17.0.13",
-    "@types/react-dom": "^17.0.8",
+    "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.1.7",
     "@typescript-eslint/eslint-plugin": "^4.28.1",
     "@typescript-eslint/parser": "^4.28.1",
