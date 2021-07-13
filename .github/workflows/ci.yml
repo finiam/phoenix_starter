@@ -57,7 +57,12 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        mix deps.get
+        sudo apt install inotify-tools curl git
+        sudo gem install foreman
+        git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1
+        echo ". $HOME/.asdf/asdf.sh" >> ~/.bashrc
+        source ~/.bashrc
+        bin/setup
         yarn
 
     - name: Linting
@@ -69,3 +74,40 @@ jobs:
 
     - name: Run Tests
       run: mix test
+
+    - name: Run Server
+      run: bin/server
+
+    - name: ZAP Scan
+      uses: zaproxy/action-full-scan@v0.2.0
+      with:
+        target: '127.0.0.1:4000'
+
+    - name: Test for public javascript library vulnerabilities
+      uses: lirantal/is-website-vulnerable@master
+      with:
+        scan-url: '127.0.0.1:4000'
+
+    - name: Dalfox scan
+      uses: hahwul/action-dalfox@main
+      id: xss-result
+      with:
+        target: '127.0.0.1:4000'
+        mode: url
+        cmd_options: '--follow-redirects'
+
+    - name: Dalfox scan
+      uses: hahwul/action-dalfox@main
+      id: pipe-result
+      with:
+        target: 'https://finiam-phoenix-starter.herokuapp.com\nhttps://finiam-phoenix-starter.herokuapp.com/api/example\nhttps://finiam-phoenix-starter.herokuapp.com/api/user\nhttps://finiam-phoenix-starter.herokuapp.com/api/sessions\nhttps://finiam-phoenix-starter.herokuapp.com/admin/analytics '
+        mode: pipe
+
+    - name: Sobelow Action
+      uses: sobelow/action@v1
+      with:
+        flags: '-i Config'
+    - name: Report sobelow
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: results.sarif
