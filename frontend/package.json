@@ -31,7 +31,7 @@
     "@typescript-eslint/parser": "^4.28.4",
     "autoprefixer": "^10.3.1",
     "cssnano": "^5.0.7",
-    "eslint": "^7.30.0",
+    "eslint": "^7.31.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-finiam": "^1.0.4",
     "eslint-config-import": "^0.13.0",
