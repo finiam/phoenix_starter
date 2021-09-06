@@ -1204,10 +1204,10 @@
     node-gyp "^7.1.0"
     read-package-json-fast "^2.0.1"
 
-"@snowpack/plugin-dotenv@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@snowpack/plugin-dotenv/-/plugin-dotenv-2.1.0.tgz#dac77007bf657f999d222318506a850fd7d16875"
-  integrity sha512-NvwB+kQuxKheZLWrRvOgXB8i0cXhuIkljbgCn02fRGCIOigPIDk1jZrnn3x9skqqtul/XvW9dNulVi6Fa7CN6g==
+"@snowpack/plugin-dotenv@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@snowpack/plugin-dotenv/-/plugin-dotenv-2.2.0.tgz#624348a83e28ae523a7d2695cbe81f53381bc964"
+  integrity sha512-/gj91mHz9iPi7e393sibVfpm4jrG7hqZytgkfiscOIWJ8Y838D0jX1JFXu9IAThZz0IEKTLpb74d5A7pM00HVg==
   dependencies:
     dotenv "^8.2.0"
     dotenv-expand "^5.1.0"
