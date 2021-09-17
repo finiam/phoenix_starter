@@ -51,7 +51,7 @@ defmodule PhoenixStarter.MixProject do
     [
       {:credo, "~> 1.5.0", runtime: false},
       {:phoenix_live_reload, "~> 1.2"},
-      {:wallaby, "~> 0.28.0", runtime: false}
+      {:wallaby, "~> 0.29.0", runtime: false}
     ]
   end
 
