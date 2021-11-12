@@ -40,7 +40,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
-    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "postcss": "^8.3.9",
     "postcss-cli": "^9.0.1",
     "postcss-custom-media": "^8.0.0",
