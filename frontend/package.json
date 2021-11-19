@@ -30,7 +30,7 @@
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "autoprefixer": "^10.4.0",
-    "cssnano": "^5.0.8",
+    "cssnano": "^5.0.11",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-finiam": "^1.0.4",
