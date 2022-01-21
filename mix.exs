@@ -28,7 +28,7 @@ defmodule PhoenixStarter.MixProject do
 
   defp deps do
     [
-      {:argon2_elixir, "~> 2.4"},
+      {:argon2_elixir, "~> 3.0"},
       {:cors_plug, "~> 2.0"},
       {:phoenix, "~> 1.5.9"},
       {:phoenix_pubsub, "~> 2.0.0"},
