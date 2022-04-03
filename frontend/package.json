@@ -9,7 +9,7 @@
     "lint-styles": "stylelint './**/*.css'"
   },
   "dependencies": {
-    "@loadable/component": "^5.15.0",
+    "@loadable/component": "^5.15.2",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
@@ -37,7 +37,7 @@
     "eslint-config-import": "^0.13.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
