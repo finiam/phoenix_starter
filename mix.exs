@@ -31,7 +31,7 @@ defmodule PhoenixStarter.MixProject do
       {:argon2_elixir, "~> 3.0"},
       {:cors_plug, "~> 3.0"},
       {:phoenix, "~> 1.5.9"},
-      {:phoenix_pubsub, "~> 2.0.0"},
+      {:phoenix_pubsub, "~> 2.1.1"},
       {:phoenix_ecto, "~> 4.0"},
       {:ecto_sql, "~> 3.5"},
       {:postgrex, ">= 0.0.0"},
