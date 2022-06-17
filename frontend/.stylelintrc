@@ -1,24 +1,16 @@
 {
-  "plugins": [
-    "stylelint-order",
-    "stylelint-prettier"
-  ],
-  "extends": [
-    "stylelint-config-prettier"
-  ],
+  "plugins": ["stylelint-order", "stylelint-prettier"],
+  "extends": ["stylelint-config-prettier"],
   "rules": {
     "prettier/prettier": true,
     "max-nesting-depth": 3,
     "indentation": 2,
-    "order/order": [
-      "custom-properties",
-      "declarations"
-    ],
-    "no-missing-end-of-source-newline": 2,
+    "order/order": ["custom-properties", "declarations"],
+    "no-missing-end-of-source-newline": true,
     "order/properties-order": [
       {
-        emptyLineBefore: "never",
-        properties: [
+        "emptyLineBefore": "never",
+        "properties": [
           "content",
           "counter-increment",
           "counter-reset",
@@ -27,8 +19,8 @@
         ]
       },
       {
-        emptyLineBefore: "always",
-        properties: [
+        "emptyLineBefore": "always",
+        "properties": [
           "position",
           "top",
           "right",
@@ -42,8 +34,8 @@
         ]
       },
       {
-        emptyLineBefore: "always",
-        properties: [
+        "emptyLineBefore": "always",
+        "properties": [
           "align-self",
           "order",
           "flex",
@@ -104,8 +96,8 @@
         ]
       },
       {
-        emptyLineBefore: "always",
-        properties: [
+        "emptyLineBefore": "always",
+        "properties": [
           "background",
           "background-attachment",
           "background-color",
@@ -164,8 +156,8 @@
         ]
       },
       {
-        emptyLineBefore: "always",
-        properties: [
+        "emptyLineBefore": "always",
+        "properties": [
           "alignment-adjust",
           "alignment-baseline",
           "baseline-shift",
@@ -227,8 +219,8 @@
         ]
       },
       {
-        emptyLineBefore: "always",
-        properties: [
+        "emptyLineBefore": "always",
+        "properties": [
           "backface-visibility",
           "perspective",
           "perspective-origin",
@@ -238,8 +230,8 @@
         ]
       },
       {
-        emptyLineBefore: "always",
-        properties: [
+        "emptyLineBefore": "always",
+        "properties": [
           "animation",
           "animation-delay",
           "animation-duration",
@@ -254,8 +246,8 @@
           "transition-property",
           "transition-timing-function"
         ]
-      },
+      }
     ],
-    "block-opening-brace-space-before": "always",
+    "block-opening-brace-space-before": "always"
   }
 }
