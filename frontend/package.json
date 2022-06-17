@@ -32,7 +32,7 @@
     "autoprefixer": "^10.4.0",
     "cssnano": "^5.1.11",
     "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-finiam": "^1.0.4",
     "eslint-config-import": "^0.13.0",
     "eslint-config-prettier": "^8.5.0",
