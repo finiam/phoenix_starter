@@ -13,7 +13,7 @@
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "^18.2.0",
-    "react-dom": "^18.0.0",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^5.3.0",
     "redaxios": "^0.5.0"
   },
@@ -25,7 +25,7 @@
     "@snowpack/plugin-webpack": "^3.0.0",
     "@types/loadable__component": "^5.13.4",
     "@types/react": "^18.0.14",
-    "@types/react-dom": "^17.0.14",
+    "@types/react-dom": "^18.0.5",
     "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
