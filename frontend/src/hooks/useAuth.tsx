@@ -14,6 +14,7 @@ import * as usersApi from "root/api/users";
 export interface AuthContextType {
   user: User;
   loading: boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   error?: Response<any>;
   login: (email: string, password: string) => void;
   signUp: (email: string, name: string, password: string) => void;
@@ -28,6 +29,7 @@ export function AuthProvider({
   children: ReactNode;
 }): JSX.Element {
   const [user, setUser] = useState<User>();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [error, setError] = useState<Response<any> | null>();
   const [loading, setLoading] = useState<boolean>(false);
   const [loadingInitial, setLoadingInitial] = useState<boolean>(true);
