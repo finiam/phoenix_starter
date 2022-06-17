@@ -3,6 +3,7 @@ import { Switch, Route, Redirect, RouteProps } from "react-router-dom";
 import loadable from "@loadable/component";
 import useAuth from "root/hooks/useAuth";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AsyncRouteProps = RouteProps & { importPath: () => Promise<any> };
 
 function AsyncRoute({ importPath, ...props }: AsyncRouteProps) {
