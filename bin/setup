@@ -29,6 +29,7 @@ else
   asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git 2>/dev/null
   asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git 2>/dev/null
   asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git 2>/dev/null
+  asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git 2>/dev/null
   set -e
 
   printf "Importing nodejs release team keyring... "
@@ -51,12 +52,16 @@ pp_info "setup" "Installing elixir dependencies..."
 MIX_ENV=$env mix local.hex --force
 MIX_ENV=$env mix local.rebar --force
 MIX_ENV=$env mix deps.get
-MIX_ENV=$env mix archive.install hex phx_new 1.5.9 --force
+MIX_ENV=$env mix archive.install hex phx_new 1.6.0 --force
 MIX_ENV=$env mix ecto.setup
 
 echo ""
 pp_info "setup" "Installing node dependencies..."
 yarn install
+
+
+echo ""
+pp_warn "setup" "You may need to install foreman before running bin/server with 'gem install foreman'."
 
 echo ""
 pp_success "setup" "You're good to go! Run bin/server to get the development server running."

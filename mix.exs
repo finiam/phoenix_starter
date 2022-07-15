@@ -30,13 +30,13 @@ defmodule PhoenixStarter.MixProject do
     [
       {:argon2_elixir, "~> 3.0"},
       {:cors_plug, "~> 3.0"},
-      {:phoenix, "~> 1.5.9"},
+      {:phoenix, "~> 1.6.0"},
       {:phoenix_pubsub, "~> 2.1.1"},
       {:phoenix_ecto, "~> 4.0"},
       {:ecto_sql, "~> 3.5"},
       {:postgrex, ">= 0.0.0"},
-      {:phoenix_html, "~> 2.11"},
-      {:phoenix_live_dashboard, "~> 0.1"},
+      {:phoenix_html, "~> 3.1"},
+      {:phoenix_live_dashboard, "~> 0.6.5"},
       {:gettext, "~> 0.11"},
       {:guardian, "~> 2.0"},
       {:jason, "~> 1.0"},
@@ -51,7 +51,7 @@ defmodule PhoenixStarter.MixProject do
     [
       {:credo, "~> 1.6.4", runtime: false},
       {:phoenix_live_reload, "~> 1.2"},
-      {:wallaby, "~> 0.29.0", runtime: false}
+      {:wallaby, "~> 0.30.0", runtime: false}
     ]
   end
 
