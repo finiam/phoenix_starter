@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 config :phoenix_starter, PhoenixStarterWeb.Endpoint, server: true
 
