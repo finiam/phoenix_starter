@@ -36,7 +36,7 @@ defmodule PhoenixStarter.MixProject do
       {:ecto_sql, "~> 3.5"},
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 3.1"},
-      {:phoenix_live_dashboard, "~> 0.6.5"},
+      {:phoenix_live_dashboard, "~> 0.7.2"},
       {:gettext, "~> 0.11"},
       {:guardian, "~> 2.0"},
       {:jason, "~> 1.0"},
