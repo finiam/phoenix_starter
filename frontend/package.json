@@ -43,7 +43,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.4.14",
     "postcss-cli": "^10.0.0",
-    "postcss-custom-media": "^8.0.2",
+    "postcss-custom-media": "^9.0.1",
     "postcss-nested": "^5.0.6",
     "prettier": "^2.7.1",
     "snowpack": "^3.8.8",
